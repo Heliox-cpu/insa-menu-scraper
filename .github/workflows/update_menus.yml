@@ -1,0 +1,77 @@
+name: Update INSA Lyon Menus & Calendar
+
+on:
+  schedule:
+    # Tous les lundis à 05:00 UTC (07:00 heure de Paris)
+    - cron: '0 5 * * 1'
+    # Vérification de rattrapage le mardi et jeudi à 05:00 UTC
+    - cron: '0 5 * * 2,4'
+  workflow_dispatch: # Déclenchement manuel en 1 clic
+
+permissions:
+  contents: write
+
+jobs:
+  scrape-and-update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+
+      - name: Scrape latest week and pre-cache dishes
+        run: |
+          python -c '
+          from insa_menu.scraper import InsaMenuScraper
+          from insa_menu.client import InsaMenuClient
+          from insa_menu.exporter import MenuExporter
+          import json
+          from concurrent.futures import ThreadPoolExecutor
+
+          print("Scraping week...")
+          scraper = InsaMenuScraper()
+          week = scraper.scrape_week()
+
+          # 1. Sauvegarder cached_menu.json
+          with open("data/cached_menu.json", "w", encoding="utf-8") as f:
+              f.write(MenuExporter.to_json(week))
+
+          # 2. Pré-mettre en cache les fiches techniques complètes
+          unique_ids = list({d.id for m in week.days for meal in m.meals for d in meal.dishes if d.id})
+          print(f"Pre-caching {len(unique_ids)} dishes...")
+          client = InsaMenuClient()
+          dishes_cache = {}
+
+          def fetch_one(did):
+              try:
+                  return did, client.get_dish_detail(did)
+              except Exception:
+                  return did, None
+
+          with ThreadPoolExecutor(max_workers=10) as executor:
+              for did, res in executor.map(fetch_one, unique_ids):
+                  if res:
+                      dishes_cache[did] = res
+
+          with open("data/cached_dishes.json", "w", encoding="utf-8") as f:
+              json.dump(dishes_cache, f, indent=2, ensure_ascii=False)
+
+          print("Done scraping & caching successfully!")
+          '
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "INSA Menu Bot"
+          git add data/cached_menu.json data/cached_dishes.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(auto): update weekly menus, calendar & dish cache" && git push)

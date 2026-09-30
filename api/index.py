@@ -84,6 +84,8 @@ def dict_to_ical(week_dict: dict) -> str:
         "METHOD:PUBLISH",
         "X-WR-CALNAME:Menus Restaurant INSA (RI)",
         "X-WR-TIMEZONE:Europe/Paris",
+        "X-PUBLISHED-TTL:PT6H",
+        "REFRESH-INTERVAL;VALUE=DURATION:PT6H",
     ]
 
     seen_slots = set()

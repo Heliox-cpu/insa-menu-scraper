@@ -626,7 +626,7 @@
     </div>
     <div class="header-actions">
       <button id="themeToggle" class="btn" title="Basculer le thème">🌓 Thème</button>
-      <a href="/menu.ics" class="btn btn-primary" download="insa_menus.ics">📅 Agenda (.ics)</a>
+      <button id="btnOpenCalendar" class="btn btn-primary" title="S'abonner aux menus dans son agenda">📅 S'abonner à l'Agenda</button>
       <a href="/api/export?format=md" class="btn" download="menus_insa.md">📄 Markdown</a>
       <a href="/api/export?format=csv" class="btn" download="menus_insa.csv">📊 CSV</a>
       <a href="/api/export?format=json" class="btn" download="menus_insa.json">📦 JSON</a>
@@ -741,6 +741,49 @@ python3 -m insa_menu.cli dish 8719
     </div>
   </dialog>
 
+  <!-- Modale d'abonnement au Calendrier iCal / Webcal -->
+  <dialog id="calendarDialog">
+    <div class="dialog-header">
+      <div>
+        <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text);">📅 Synchronisation Automatique de l'Agenda</h3>
+        <p style="color: var(--text-muted); font-size: 0.825rem; margin-top: 0.25rem;">
+          Abonnez-vous une seule fois : vos repas du midi et du soir au RI se mettront à jour automatiquement chaque semaine !
+        </p>
+      </div>
+      <button class="dialog-close" id="calendarDialogClose">&times;</button>
+    </div>
+    <div id="calendarDialogBody" style="display: flex; flex-direction: column; gap: 1rem;">
+      <!-- Option 1: Apple Calendar en 1 clic -->
+      <div style="background: var(--bg); padding: 1rem; border-radius: var(--radius); border: 1px solid var(--card-border);">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+          <div>
+            <div style="font-weight: 700; font-size: 0.95rem; color: var(--text);">🍏 iPhone, iPad & Mac (Apple Calendar)</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.15rem;">Ouverture directe et abonnement instantané avec auto-actualisation</div>
+          </div>
+          <a id="btnWebcalLink" href="#" class="btn btn-primary" style="text-decoration: none;">📲 S'abonner en 1 clic</a>
+        </div>
+      </div>
+
+      <!-- Option 2: Google Calendar & Outlook via URL -->
+      <div style="background: var(--bg); padding: 1rem; border-radius: var(--radius); border: 1px solid var(--card-border);">
+        <div style="font-weight: 700; font-size: 0.95rem; color: var(--text); margin-bottom: 0.4rem;">🌐 Google Calendar, Android & Outlook</div>
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.65rem;">
+          Dans <strong>Google Calendar</strong> : cliquez sur <em>Autres agendas (+)</em> &gt; <em>À partir de l'URL</em> &gt; collez cette adresse :
+        </p>
+        <div style="display: flex; gap: 0.5rem;">
+          <input type="text" id="calendarUrlInput" readonly class="search-input" style="flex: 1; font-family: monospace; font-size: 0.8rem;" value="">
+          <button id="btnCopyCalendarUrl" class="btn" style="white-space: nowrap;">📋 Copier l'URL</button>
+        </div>
+      </div>
+
+      <!-- Option 3: Téléchargement du fichier brut -->
+      <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 0.5rem; border-top: 1px solid var(--card-border);">
+        <span style="font-size: 0.8rem; color: var(--text-muted);">Besoin du fichier brut hors-ligne ?</span>
+        <a href="/menu.ics" download="insa_menus.ics" class="btn" style="font-size: 0.775rem;">💾 Télécharger .ics</a>
+      </div>
+    </div>
+  </dialog>
+
   <footer>
     <p>INSA Lyon Menu Scraper • Données officielles LiveSoft / Salamandre • Le Restaurant INSA (RI)</p>
   </footer>
@@ -759,6 +802,44 @@ python3 -m insa_menu.cli dish 8719
     const searchInput = document.getElementById('searchInput');
     const dishDialog = document.getElementById('dishDialog');
     const dialogClose = document.getElementById('dialogClose');
+
+    // Dialogue d'abonnement au calendrier
+    const btnOpenCalendar = document.getElementById('btnOpenCalendar');
+    const calendarDialog = document.getElementById('calendarDialog');
+    const calendarDialogClose = document.getElementById('calendarDialogClose');
+    const btnWebcalLink = document.getElementById('btnWebcalLink');
+    const calendarUrlInput = document.getElementById('calendarUrlInput');
+    const btnCopyCalendarUrl = document.getElementById('btnCopyCalendarUrl');
+
+    if (btnOpenCalendar) {
+      btnOpenCalendar.addEventListener('click', () => {
+        const fullUrl = window.location.origin + '/menu.ics';
+        calendarUrlInput.value = fullUrl;
+        const webcalUrl = fullUrl.replace(/^https?:\/\//, 'webcal://');
+        btnWebcalLink.href = webcalUrl;
+        calendarDialog.showModal();
+      });
+    }
+
+    if (calendarDialogClose) {
+      calendarDialogClose.addEventListener('click', () => calendarDialog.close());
+    }
+    if (calendarDialog) {
+      calendarDialog.addEventListener('click', (e) => {
+        if (e.target === calendarDialog) calendarDialog.close();
+      });
+    }
+
+    if (btnCopyCalendarUrl) {
+      btnCopyCalendarUrl.addEventListener('click', async () => {
+        const ok = await copyToClipboard(calendarUrlInput.value);
+        const orig = btnCopyCalendarUrl.textContent;
+        if (ok) {
+          btnCopyCalendarUrl.textContent = '✅ Copié !';
+          setTimeout(() => { btnCopyCalendarUrl.textContent = orig; }, 2000);
+        }
+      });
+    }
 
     // Thème (Défaut clair aux couleurs INSA)
     const savedTheme = localStorage.getItem('insa-theme') || 'light';
