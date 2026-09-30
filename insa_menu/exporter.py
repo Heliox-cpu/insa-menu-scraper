@@ -52,7 +52,8 @@ class MenuExporter:
                         for d in dishes:
                             labels_str = f" `{' '.join(d.labels)}`" if d.labels else ""
                             cal_str = f" *({d.calories} kcal)*" if d.calories else ""
-                            lines.append(f"- {d.name}{cal_str}{labels_str}")
+                            alg_str = f" *(Allergènes: {', '.join(d.allergens)})*" if d.allergens else ""
+                            lines.append(f"- {d.name}{cal_str}{labels_str}{alg_str}")
                         lines.append("")
                 lines.append("---\n")
 
@@ -77,6 +78,7 @@ class MenuExporter:
             "Fait Maison",
             "Viande Française",
             "Labels",
+            "Allergènes",
         ])
 
         for day in week_menu.days:
@@ -96,6 +98,7 @@ class MenuExporter:
                         "Oui" if dish.is_homemade else "Non",
                         "Oui" if dish.is_french_meat else "Non",
                         ", ".join(dish.labels),
+                        ", ".join(dish.allergens),
                     ])
 
         return output.getvalue()

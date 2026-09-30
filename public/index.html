@@ -464,6 +464,16 @@
     .badge-vf  { background: var(--badge-vf-bg); color: var(--badge-vf-txt); }
     .badge-fm  { background: var(--badge-fm-bg); color: var(--badge-fm-txt); }
     .badge-cal { background: rgba(148, 163, 184, 0.15); color: var(--text-muted); }
+    .badge-alg {
+      background: rgba(225, 29, 72, 0.12);
+      color: #be123c;
+      border: 1px solid rgba(225, 29, 72, 0.25);
+    }
+    [data-theme="dark"] .badge-alg {
+      background: rgba(244, 63, 94, 0.15);
+      color: #fda4af;
+      border-color: rgba(244, 63, 94, 0.3);
+    }
 
     .btn-detail {
       background: transparent;
@@ -635,11 +645,15 @@
       </div>
 
       <div class="filters-bar">
-        <input type="text" id="searchInput" class="search-input" placeholder="🔍 Rechercher un plat...">
+        <input type="text" id="searchInput" class="search-input" placeholder="🔍 Plat ou allergène (ex: gluten, poisson)...">
         <div class="filter-chip" data-filter="veg">🌱 Végétarien</div>
         <div class="filter-chip" data-filter="bio">🌿 Bio</div>
         <div class="filter-chip" data-filter="fm">👨‍🍳 Fait maison</div>
         <div class="filter-chip" data-filter="vf">🇫🇷 Viande FR</div>
+        <div class="filter-chip" data-filter="nogluten">🚫 Sans gluten</div>
+        <div class="filter-chip" data-filter="nolactose">🚫 Sans lait</div>
+        <div class="filter-chip" data-filter="noegg">🚫 Sans œuf</div>
+        <div class="filter-chip" data-filter="nonuts">🚫 Sans fruit à coque</div>
       </div>
     </div>
 
@@ -832,8 +846,12 @@ python3 -m insa_menu.cli dish 8719
         }
 
         const algDiv = document.getElementById('dialogAllergens');
-        if (data.Allergenes && data.Allergenes.length > 0) {
-          algDiv.textContent = data.Allergenes.map(a => a.LibAlg).join(', ');
+        const algList = (data.Allergenes && data.Allergenes.length > 0)
+          ? data.Allergenes.map(a => a.LibAlg).filter(Boolean)
+          : [];
+
+        if (algList.length > 0) {
+          algDiv.innerHTML = algList.map(a => `<span class="badge badge-alg" style="font-size: 0.8rem; padding: 0.25rem 0.5rem; margin-right: 0.35rem; margin-bottom: 0.35rem;">⚠️ ${a}</span>`).join('');
         } else {
           algDiv.textContent = 'Aucun allergène majeur déclaré.';
         }
@@ -884,11 +902,23 @@ python3 -m insa_menu.cli dish 8719
     }
 
     function dishPassesFilters(dish) {
-      if (searchQuery && !dish.name.toLowerCase().includes(searchQuery)) return false;
+      if (searchQuery) {
+        const q = searchQuery.toLowerCase();
+        const matchesName = dish.name.toLowerCase().includes(q);
+        const matchesAlg = (dish.allergens || []).some(a => a.toLowerCase().includes(q));
+        if (!matchesName && !matchesAlg) return false;
+      }
       if (activeFilters.has('veg') && !dish.is_vegetarian) return false;
       if (activeFilters.has('bio') && !dish.is_bio) return false;
       if (activeFilters.has('fm') && !dish.is_homemade) return false;
       if (activeFilters.has('vf') && !dish.is_french_meat) return false;
+
+      const algs = (dish.allergens || []).map(a => a.toLowerCase());
+      if (activeFilters.has('nogluten') && algs.some(a => a.includes('gluten'))) return false;
+      if (activeFilters.has('nolactose') && algs.some(a => a.includes('lait'))) return false;
+      if (activeFilters.has('noegg') && algs.some(a => a.includes('oeuf'))) return false;
+      if (activeFilters.has('nonuts') && algs.some(a => a.includes('coque') || a.includes('arachide'))) return false;
+
       return true;
     }
 
@@ -900,6 +930,9 @@ python3 -m insa_menu.cli dish 8719
       if (dish.is_homemade) badges.push('<span class="badge badge-fm">👨‍🍳 Fait maison</span>');
       if (dish.calories) badges.push(`<span class="badge badge-cal">🔥 ${dish.calories} kcal</span>`);
       if (dish.net_weight) badges.push(`<span class="badge badge-cal">⚖️ ${dish.net_weight} g</span>`);
+      if (dish.allergens && dish.allergens.length > 0) {
+        badges.push(`<span class="badge badge-alg" title="Allergènes : ${dish.allergens.join(', ')}">⚠️ ${dish.allergens.join(', ')}</span>`);
+      }
 
       return `
         <div class="dish-item">

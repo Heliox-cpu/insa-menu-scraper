@@ -125,7 +125,44 @@ class InsaMenuScraper:
                     e,
                 )
 
+        # Enrichissement automatique des plats avec leurs allergènes officiels
+        self._enrich_allergens(all_meals)
+
         return MenuParser.build_week_menu(all_meals, start_date, end_date)
+
+    def _enrich_allergens(self, meals: List[Meal]) -> None:
+        """Enrichit les plats avec leurs allergènes déclarés via l'API Plat/."""
+        dish_ids = list({d.id for m in meals for d in m.dishes if d.id})
+        if not dish_ids:
+            return
+
+        from concurrent.futures import ThreadPoolExecutor
+
+        def _fetch_algs(did: str):
+            try:
+                detail = self.client.get_dish_detail(did)
+                algs = [
+                    a.get("LibAlg", "").strip()
+                    for a in detail.get("Allergenes", [])
+                    if a.get("LibAlg") and a.get("LibAlg").strip()
+                ]
+                return did, algs
+            except Exception:
+                return did, []
+
+        allergens_map = {}
+        try:
+            with ThreadPoolExecutor(max_workers=10) as executor:
+                for did, algs in executor.map(_fetch_algs, dish_ids):
+                    if algs:
+                        allergens_map[did] = algs
+        except Exception as e:
+            logger.warning("Erreur lors de la récupération groupée des allergènes: %s", e)
+
+        for m in meals:
+            for dish in m.dishes:
+                if dish.id in allergens_map:
+                    dish.allergens = allergens_map[dish.id]
 
     def scrape_today(self, target_date: Optional[str] = None) -> Optional[DayMenu]:
         """

@@ -26,7 +26,12 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Anhydride Sulfureux",
+                "Céleri",
+                "Moutarde",
+                "Oeufs"
+              ]
             },
             {
               "id": "4827",
@@ -54,7 +59,10 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Lait"
+              ]
             },
             {
               "id": "8541",
@@ -68,7 +76,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Moutarde",
+                "Soja"
+              ]
             },
             {
               "id": "1510",
@@ -82,7 +94,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Moutarde",
+                "Oeufs",
+                "Poisson"
+              ]
             },
             {
               "id": "8737",
@@ -96,7 +112,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Oeufs"
+              ]
             },
             {
               "id": "8589",
@@ -110,7 +128,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Poisson"
+              ]
             },
             {
               "id": "7382",
@@ -128,7 +148,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten"
+              ]
             },
             {
               "id": "8380",
@@ -146,7 +168,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Lait",
+                "Oeufs"
+              ]
             },
             {
               "id": "8751",
@@ -178,7 +204,16 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": true,
-              "allergens": []
+              "allergens": [
+                "Anhydride Sulfureux",
+                "Céleri",
+                "Crustacés",
+                "Gluten",
+                "Lait",
+                "Mollusque",
+                "Oeufs",
+                "Poisson"
+              ]
             },
             {
               "id": "1416",
@@ -196,7 +231,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": true,
-              "allergens": []
+              "allergens": [
+                "Anhydride Sulfureux",
+                "Gluten",
+                "Lait"
+              ]
             },
             {
               "id": "2170",
@@ -224,7 +263,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Anhydride Sulfureux"
+              ]
             },
             {
               "id": "2878",
@@ -238,7 +279,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "8468",
@@ -256,7 +299,9 @@
               "is_bio": true,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "3578",
@@ -298,7 +343,12 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Lait",
+                "Oeufs",
+                "Soja"
+              ]
             },
             {
               "id": "21",
@@ -347,7 +397,12 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Anhydride Sulfureux",
+                  "Céleri",
+                  "Moutarde",
+                  "Oeufs"
+                ]
               },
               {
                 "id": "4827",
@@ -375,7 +430,10 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Lait"
+                ]
               },
               {
                 "id": "8541",
@@ -389,7 +447,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Moutarde",
+                  "Soja"
+                ]
               },
               {
                 "id": "1510",
@@ -403,7 +465,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Moutarde",
+                  "Oeufs",
+                  "Poisson"
+                ]
               },
               {
                 "id": "8737",
@@ -417,7 +483,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Oeufs"
+                ]
               }
             ],
             "plats": [
@@ -433,7 +501,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Poisson"
+                ]
               },
               {
                 "id": "7382",
@@ -451,7 +521,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten"
+                ]
               },
               {
                 "id": "8380",
@@ -469,7 +541,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Lait",
+                  "Oeufs"
+                ]
               },
               {
                 "id": "8751",
@@ -503,7 +579,16 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": true,
-                "allergens": []
+                "allergens": [
+                  "Anhydride Sulfureux",
+                  "Céleri",
+                  "Crustacés",
+                  "Gluten",
+                  "Lait",
+                  "Mollusque",
+                  "Oeufs",
+                  "Poisson"
+                ]
               },
               {
                 "id": "1416",
@@ -521,7 +606,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": true,
-                "allergens": []
+                "allergens": [
+                  "Anhydride Sulfureux",
+                  "Gluten",
+                  "Lait"
+                ]
               },
               {
                 "id": "2170",
@@ -549,7 +638,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Anhydride Sulfureux"
+                ]
               }
             ],
             "fromages": [
@@ -565,7 +656,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               },
               {
                 "id": "8468",
@@ -583,7 +676,9 @@
                 "is_bio": true,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               }
             ],
             "desserts": [
@@ -627,7 +722,12 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Lait",
+                  "Oeufs",
+                  "Soja"
+                ]
               },
               {
                 "id": "21",
@@ -684,7 +784,12 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Anhydride Sulfureux",
+                "Céleri",
+                "Moutarde",
+                "Oeufs"
+              ]
             },
             {
               "id": "8541",
@@ -698,7 +803,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Moutarde",
+                "Soja"
+              ]
             },
             {
               "id": "1412",
@@ -712,7 +821,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Lait",
+                "Oeufs"
+              ]
             },
             {
               "id": "1510",
@@ -726,7 +839,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Moutarde",
+                "Oeufs",
+                "Poisson"
+              ]
             },
             {
               "id": "3582",
@@ -754,7 +871,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Oeufs"
+              ]
             },
             {
               "id": "3762",
@@ -772,7 +891,10 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Lait"
+              ]
             },
             {
               "id": "3384",
@@ -790,7 +912,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": true,
-              "allergens": []
+              "allergens": [
+                "Anhydride Sulfureux",
+                "Gluten",
+                "Lait"
+              ]
             },
             {
               "id": "6495",
@@ -804,7 +930,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Lait",
+                "Poisson"
+              ]
             },
             {
               "id": "2878",
@@ -818,7 +948,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "8468",
@@ -836,7 +968,9 @@
               "is_bio": true,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "3578",
@@ -878,7 +1012,12 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Lait",
+                "Oeufs",
+                "Soja"
+              ]
             },
             {
               "id": "21",
@@ -927,7 +1066,12 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Anhydride Sulfureux",
+                  "Céleri",
+                  "Moutarde",
+                  "Oeufs"
+                ]
               },
               {
                 "id": "8541",
@@ -941,7 +1085,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Moutarde",
+                  "Soja"
+                ]
               },
               {
                 "id": "1412",
@@ -955,7 +1103,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Lait",
+                  "Oeufs"
+                ]
               },
               {
                 "id": "1510",
@@ -969,7 +1121,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Moutarde",
+                  "Oeufs",
+                  "Poisson"
+                ]
               },
               {
                 "id": "3582",
@@ -997,7 +1153,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Oeufs"
+                ]
               }
             ],
             "plats": [
@@ -1017,7 +1175,10 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Lait"
+                ]
               },
               {
                 "id": "3384",
@@ -1035,7 +1196,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": true,
-                "allergens": []
+                "allergens": [
+                  "Anhydride Sulfureux",
+                  "Gluten",
+                  "Lait"
+                ]
               },
               {
                 "id": "6495",
@@ -1049,7 +1214,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Lait",
+                  "Poisson"
+                ]
               }
             ],
             "accompagnements": [],
@@ -1066,7 +1235,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               },
               {
                 "id": "8468",
@@ -1084,7 +1255,9 @@
                 "is_bio": true,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               }
             ],
             "desserts": [
@@ -1128,7 +1301,12 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Lait",
+                  "Oeufs",
+                  "Soja"
+                ]
               },
               {
                 "id": "21",
@@ -1191,7 +1369,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "5773",
@@ -1205,7 +1385,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "8541",
@@ -1219,7 +1401,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Moutarde",
+                "Soja"
+              ]
             },
             {
               "id": "7104",
@@ -1233,7 +1419,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "8764",
@@ -1247,7 +1435,10 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Céleri",
+                "Gluten"
+              ]
             },
             {
               "id": "4409",
@@ -1261,7 +1452,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Poisson"
+              ]
             },
             {
               "id": "9023",
@@ -1275,7 +1468,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Moutarde",
+                "Poisson"
+              ]
             },
             {
               "id": "3103",
@@ -1293,7 +1490,10 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": true,
-              "allergens": []
+              "allergens": [
+                "Lait",
+                "Oeufs"
+              ]
             },
             {
               "id": "1302",
@@ -1307,7 +1507,14 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Crustacés",
+                "Gluten",
+                "Lait",
+                "Oeufs",
+                "Poisson",
+                "Soja"
+              ]
             },
             {
               "id": "1511",
@@ -1325,7 +1532,12 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": true,
-              "allergens": []
+              "allergens": [
+                "Anhydride Sulfureux",
+                "Gluten",
+                "Lait",
+                "Moutarde"
+              ]
             },
             {
               "id": "5617",
@@ -1357,7 +1569,16 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": true,
-              "allergens": []
+              "allergens": [
+                "Anhydride Sulfureux",
+                "Céleri",
+                "Crustacés",
+                "Gluten",
+                "Lait",
+                "Mollusque",
+                "Oeufs",
+                "Poisson"
+              ]
             },
             {
               "id": "3226",
@@ -1371,7 +1592,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "1615",
@@ -1385,7 +1608,10 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Lait"
+              ]
             },
             {
               "id": "507",
@@ -1399,7 +1625,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "8485",
@@ -1413,7 +1641,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "2375",
@@ -1441,7 +1671,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Lait",
+                "Oeufs"
+              ]
             },
             {
               "id": "3542",
@@ -1504,7 +1738,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               },
               {
                 "id": "5773",
@@ -1518,7 +1754,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               },
               {
                 "id": "8541",
@@ -1532,7 +1770,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Moutarde",
+                  "Soja"
+                ]
               },
               {
                 "id": "7104",
@@ -1546,7 +1788,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               },
               {
                 "id": "8764",
@@ -1560,7 +1804,10 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Céleri",
+                  "Gluten"
+                ]
               }
             ],
             "plats": [
@@ -1576,7 +1823,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Poisson"
+                ]
               },
               {
                 "id": "9023",
@@ -1590,7 +1839,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Moutarde",
+                  "Poisson"
+                ]
               },
               {
                 "id": "3103",
@@ -1608,7 +1861,10 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": true,
-                "allergens": []
+                "allergens": [
+                  "Lait",
+                  "Oeufs"
+                ]
               },
               {
                 "id": "1302",
@@ -1622,7 +1878,14 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Crustacés",
+                  "Gluten",
+                  "Lait",
+                  "Oeufs",
+                  "Poisson",
+                  "Soja"
+                ]
               },
               {
                 "id": "1511",
@@ -1640,7 +1903,12 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": true,
-                "allergens": []
+                "allergens": [
+                  "Anhydride Sulfureux",
+                  "Gluten",
+                  "Lait",
+                  "Moutarde"
+                ]
               },
               {
                 "id": "5617",
@@ -1674,7 +1942,16 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": true,
-                "allergens": []
+                "allergens": [
+                  "Anhydride Sulfureux",
+                  "Céleri",
+                  "Crustacés",
+                  "Gluten",
+                  "Lait",
+                  "Mollusque",
+                  "Oeufs",
+                  "Poisson"
+                ]
               },
               {
                 "id": "3226",
@@ -1688,7 +1965,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               },
               {
                 "id": "1615",
@@ -1702,7 +1981,10 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Lait"
+                ]
               }
             ],
             "fromages": [
@@ -1718,7 +2000,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               },
               {
                 "id": "8485",
@@ -1732,7 +2016,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               }
             ],
             "desserts": [
@@ -1762,7 +2048,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Lait",
+                  "Oeufs"
+                ]
               },
               {
                 "id": "3542",
@@ -1833,7 +2123,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "5773",
@@ -1847,7 +2139,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "1394",
@@ -1861,7 +2155,12 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Anhydride Sulfureux",
+                "Gluten",
+                "Lait",
+                "Oeufs"
+              ]
             },
             {
               "id": "8541",
@@ -1875,7 +2174,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Moutarde",
+                "Soja"
+              ]
             },
             {
               "id": "7104",
@@ -1889,7 +2192,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "8764",
@@ -1903,7 +2208,10 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Céleri",
+                "Gluten"
+              ]
             },
             {
               "id": "2585",
@@ -1917,7 +2225,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Lait",
+                "Soja"
+              ]
             },
             {
               "id": "2750",
@@ -1931,7 +2243,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Poisson"
+              ]
             },
             {
               "id": "9133",
@@ -1945,7 +2259,10 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Oeufs"
+              ]
             },
             {
               "id": "7382",
@@ -1963,7 +2280,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten"
+              ]
             },
             {
               "id": "5090",
@@ -1981,7 +2300,16 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": true,
-              "allergens": []
+              "allergens": [
+                "Anhydride Sulfureux",
+                "Céleri",
+                "Crustacés",
+                "Gluten",
+                "Lait",
+                "Mollusque",
+                "Oeufs",
+                "Poisson"
+              ]
             },
             {
               "id": "7319",
@@ -2013,7 +2341,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Lait",
+                "Oeufs"
+              ]
             },
             {
               "id": "507",
@@ -2027,7 +2359,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "8485",
@@ -2041,7 +2375,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "2375",
@@ -2069,7 +2405,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Lait",
+                "Oeufs"
+              ]
             },
             {
               "id": "8450",
@@ -2087,7 +2427,12 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": true,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Lait",
+                "Oeufs",
+                "Soja"
+              ]
             },
             {
               "id": "3542",
@@ -2150,7 +2495,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               },
               {
                 "id": "5773",
@@ -2164,7 +2511,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               },
               {
                 "id": "1394",
@@ -2178,7 +2527,12 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Anhydride Sulfureux",
+                  "Gluten",
+                  "Lait",
+                  "Oeufs"
+                ]
               },
               {
                 "id": "8541",
@@ -2192,7 +2546,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Moutarde",
+                  "Soja"
+                ]
               },
               {
                 "id": "7104",
@@ -2206,7 +2564,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               },
               {
                 "id": "8764",
@@ -2220,7 +2580,10 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Céleri",
+                  "Gluten"
+                ]
               }
             ],
             "plats": [
@@ -2236,7 +2599,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Lait",
+                  "Soja"
+                ]
               },
               {
                 "id": "2750",
@@ -2250,7 +2617,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Poisson"
+                ]
               },
               {
                 "id": "9133",
@@ -2264,7 +2633,10 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Oeufs"
+                ]
               },
               {
                 "id": "7382",
@@ -2282,7 +2654,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten"
+                ]
               }
             ],
             "accompagnements": [
@@ -2302,7 +2676,16 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": true,
-                "allergens": []
+                "allergens": [
+                  "Anhydride Sulfureux",
+                  "Céleri",
+                  "Crustacés",
+                  "Gluten",
+                  "Lait",
+                  "Mollusque",
+                  "Oeufs",
+                  "Poisson"
+                ]
               },
               {
                 "id": "7319",
@@ -2334,7 +2717,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Lait",
+                  "Oeufs"
+                ]
               }
             ],
             "fromages": [
@@ -2350,7 +2737,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               },
               {
                 "id": "8485",
@@ -2364,7 +2753,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               }
             ],
             "desserts": [
@@ -2394,7 +2785,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Lait",
+                  "Oeufs"
+                ]
               },
               {
                 "id": "8450",
@@ -2412,7 +2807,12 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": true,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Lait",
+                  "Oeufs",
+                  "Soja"
+                ]
               },
               {
                 "id": "3542",
@@ -2493,7 +2893,10 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Moutarde",
+                "Oeufs"
+              ]
             },
             {
               "id": "8956",
@@ -2507,7 +2910,10 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Lait"
+              ]
             },
             {
               "id": "532",
@@ -2521,7 +2927,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Anhydride Sulfureux",
+                "Moutarde",
+                "Oeufs"
+              ]
             },
             {
               "id": "6133",
@@ -2535,7 +2945,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "8737",
@@ -2549,7 +2961,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Oeufs"
+              ]
             },
             {
               "id": "3518",
@@ -2577,7 +2991,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Poisson"
+              ]
             },
             {
               "id": "8665",
@@ -2595,7 +3011,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten"
+              ]
             },
             {
               "id": "9047",
@@ -2613,7 +3031,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": true,
-              "allergens": []
+              "allergens": [
+                "Anhydride Sulfureux",
+                "Gluten",
+                "Lait"
+              ]
             },
             {
               "id": "6159",
@@ -2631,7 +3053,16 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": true,
-              "allergens": []
+              "allergens": [
+                "Anhydride Sulfureux",
+                "Céleri",
+                "Crustacés",
+                "Gluten",
+                "Lait",
+                "Mollusque",
+                "Oeufs",
+                "Poisson"
+              ]
             },
             {
               "id": "1414",
@@ -2659,7 +3090,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "2878",
@@ -2673,7 +3106,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "8468",
@@ -2691,7 +3126,9 @@
               "is_bio": true,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "140",
@@ -2758,7 +3195,10 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Moutarde",
+                  "Oeufs"
+                ]
               },
               {
                 "id": "8956",
@@ -2772,7 +3212,10 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Lait"
+                ]
               },
               {
                 "id": "532",
@@ -2786,7 +3229,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Anhydride Sulfureux",
+                  "Moutarde",
+                  "Oeufs"
+                ]
               },
               {
                 "id": "6133",
@@ -2800,7 +3247,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               },
               {
                 "id": "8737",
@@ -2814,7 +3263,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Oeufs"
+                ]
               }
             ],
             "plats": [
@@ -2844,7 +3295,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Poisson"
+                ]
               },
               {
                 "id": "8665",
@@ -2862,7 +3315,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten"
+                ]
               }
             ],
             "accompagnements": [
@@ -2882,7 +3337,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": true,
-                "allergens": []
+                "allergens": [
+                  "Anhydride Sulfureux",
+                  "Gluten",
+                  "Lait"
+                ]
               },
               {
                 "id": "6159",
@@ -2900,7 +3359,16 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": true,
-                "allergens": []
+                "allergens": [
+                  "Anhydride Sulfureux",
+                  "Céleri",
+                  "Crustacés",
+                  "Gluten",
+                  "Lait",
+                  "Mollusque",
+                  "Oeufs",
+                  "Poisson"
+                ]
               },
               {
                 "id": "1414",
@@ -2928,7 +3396,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               }
             ],
             "fromages": [
@@ -2944,7 +3414,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               },
               {
                 "id": "8468",
@@ -2962,7 +3434,9 @@
                 "is_bio": true,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               }
             ],
             "desserts": [
@@ -3035,7 +3509,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "8737",
@@ -3049,7 +3525,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Oeufs"
+              ]
             },
             {
               "id": "8739",
@@ -3077,7 +3555,15 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Céleri",
+                "Gluten",
+                "Graine de Sésame",
+                "Lait",
+                "Moutarde",
+                "Oeufs",
+                "Poisson"
+              ]
             },
             {
               "id": "6392",
@@ -3091,7 +3577,15 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Céleri",
+                "Gluten",
+                "Graine de Sésame",
+                "Lait",
+                "Moutarde",
+                "Oeufs",
+                "Poisson"
+              ]
             },
             {
               "id": "6636",
@@ -3109,7 +3603,15 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Céleri",
+                "Gluten",
+                "Graine de Sésame",
+                "Lait",
+                "Moutarde",
+                "Oeufs",
+                "Poisson"
+              ]
             },
             {
               "id": "430",
@@ -3151,7 +3653,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "8468",
@@ -3169,7 +3673,9 @@
               "is_bio": true,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "140",
@@ -3197,7 +3703,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Lait",
+                "Soja"
+              ]
             },
             {
               "id": "7988",
@@ -3211,7 +3721,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Lait",
+                "Soja"
+              ]
             },
             {
               "id": "21",
@@ -3260,7 +3774,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               },
               {
                 "id": "8737",
@@ -3274,7 +3790,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Oeufs"
+                ]
               },
               {
                 "id": "8739",
@@ -3304,7 +3822,15 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Céleri",
+                  "Gluten",
+                  "Graine de Sésame",
+                  "Lait",
+                  "Moutarde",
+                  "Oeufs",
+                  "Poisson"
+                ]
               },
               {
                 "id": "6392",
@@ -3318,7 +3844,15 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Céleri",
+                  "Gluten",
+                  "Graine de Sésame",
+                  "Lait",
+                  "Moutarde",
+                  "Oeufs",
+                  "Poisson"
+                ]
               },
               {
                 "id": "6636",
@@ -3336,7 +3870,15 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Céleri",
+                  "Gluten",
+                  "Graine de Sésame",
+                  "Lait",
+                  "Moutarde",
+                  "Oeufs",
+                  "Poisson"
+                ]
               }
             ],
             "accompagnements": [
@@ -3382,7 +3924,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               },
               {
                 "id": "8468",
@@ -3400,7 +3944,9 @@
                 "is_bio": true,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               }
             ],
             "desserts": [
@@ -3430,7 +3976,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Lait",
+                  "Soja"
+                ]
               },
               {
                 "id": "7988",
@@ -3444,7 +3994,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Lait",
+                  "Soja"
+                ]
               },
               {
                 "id": "21",
@@ -3507,7 +4061,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Anhydride Sulfureux"
+              ]
             },
             {
               "id": "8537",
@@ -3521,7 +4077,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Poisson"
+              ]
             },
             {
               "id": "466",
@@ -3535,7 +4093,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "8739",
@@ -3567,7 +4127,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": true,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Lait",
+                "Poisson"
+              ]
             },
             {
               "id": "6948",
@@ -3585,7 +4149,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": true,
-              "allergens": []
+              "allergens": [
+                "Anhydride Sulfureux",
+                "Gluten",
+                "Lait"
+              ]
             },
             {
               "id": "6955",
@@ -3603,7 +4171,10 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Lait"
+              ]
             },
             {
               "id": "6958",
@@ -3617,7 +4188,10 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Oeufs"
+              ]
             },
             {
               "id": "8468",
@@ -3635,7 +4209,9 @@
               "is_bio": true,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "2375",
@@ -3681,7 +4257,10 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": true,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Lait"
+              ]
             },
             {
               "id": "2308",
@@ -3699,7 +4278,9 @@
               "is_bio": true,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "2387",
@@ -3734,7 +4315,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Anhydride Sulfureux"
+                ]
               },
               {
                 "id": "8537",
@@ -3748,7 +4331,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Poisson"
+                ]
               },
               {
                 "id": "466",
@@ -3762,7 +4347,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               },
               {
                 "id": "8739",
@@ -3796,7 +4383,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": true,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Lait",
+                  "Poisson"
+                ]
               },
               {
                 "id": "6948",
@@ -3814,7 +4405,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": true,
-                "allergens": []
+                "allergens": [
+                  "Anhydride Sulfureux",
+                  "Gluten",
+                  "Lait"
+                ]
               },
               {
                 "id": "6955",
@@ -3832,7 +4427,10 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Lait"
+                ]
               }
             ],
             "accompagnements": [
@@ -3848,7 +4446,10 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Oeufs"
+                ]
               }
             ],
             "fromages": [
@@ -3868,7 +4469,9 @@
                 "is_bio": true,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               }
             ],
             "desserts": [
@@ -3916,7 +4519,10 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": true,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Lait"
+                ]
               },
               {
                 "id": "2308",
@@ -3934,7 +4540,9 @@
                 "is_bio": true,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               },
               {
                 "id": "2387",
@@ -3977,7 +4585,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Anhydride Sulfureux"
+              ]
             },
             {
               "id": "1291",
@@ -3991,7 +4601,13 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Fruit à Coque",
+                "Gluten",
+                "Lait",
+                "Oeufs",
+                "Soja"
+              ]
             },
             {
               "id": "8537",
@@ -4005,7 +4621,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Poisson"
+              ]
             },
             {
               "id": "6128",
@@ -4047,7 +4665,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "1306",
@@ -4065,7 +4685,12 @@
               "is_bio": false,
               "is_french_meat": true,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Anhydride Sulfureux",
+                "Gluten",
+                "Lait",
+                "Oeufs"
+              ]
             },
             {
               "id": "8589",
@@ -4079,7 +4704,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Poisson"
+              ]
             },
             {
               "id": "7383",
@@ -4097,7 +4724,10 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Lait"
+              ]
             },
             {
               "id": "6429",
@@ -4111,7 +4741,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Lait",
+                "Soja"
+              ]
             },
             {
               "id": "2593",
@@ -4125,7 +4759,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Soja"
+              ]
             },
             {
               "id": "8468",
@@ -4143,7 +4779,9 @@
               "is_bio": true,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "8486",
@@ -4157,7 +4795,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "2375",
@@ -4234,7 +4874,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Anhydride Sulfureux"
+                ]
               },
               {
                 "id": "1291",
@@ -4248,7 +4890,13 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Fruit à Coque",
+                  "Gluten",
+                  "Lait",
+                  "Oeufs",
+                  "Soja"
+                ]
               },
               {
                 "id": "8537",
@@ -4262,7 +4910,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Poisson"
+                ]
               },
               {
                 "id": "6128",
@@ -4304,7 +4954,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               }
             ],
             "plats": [
@@ -4324,7 +4976,12 @@
                 "is_bio": false,
                 "is_french_meat": true,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Anhydride Sulfureux",
+                  "Gluten",
+                  "Lait",
+                  "Oeufs"
+                ]
               },
               {
                 "id": "8589",
@@ -4338,7 +4995,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Poisson"
+                ]
               },
               {
                 "id": "7383",
@@ -4356,7 +5015,10 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Lait"
+                ]
               }
             ],
             "accompagnements": [
@@ -4372,7 +5034,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Lait",
+                  "Soja"
+                ]
               },
               {
                 "id": "2593",
@@ -4386,7 +5052,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Soja"
+                ]
               }
             ],
             "fromages": [
@@ -4406,7 +5074,9 @@
                 "is_bio": true,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               },
               {
                 "id": "8486",
@@ -4420,7 +5090,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               }
             ],
             "desserts": [
@@ -4513,7 +5185,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Poisson",
+                "Soja"
+              ]
             },
             {
               "id": "9046",
@@ -4527,7 +5203,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Crustacés",
+                "Gluten",
+                "Lait"
+              ]
             },
             {
               "id": "5249",
@@ -4541,7 +5221,13 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Crustacés",
+                "Gluten",
+                "Moutarde",
+                "Oeufs",
+                "Poisson"
+              ]
             },
             {
               "id": "8951",
@@ -4583,7 +5269,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Moutarde",
+                "Poisson"
+              ]
             },
             {
               "id": "6115",
@@ -4601,7 +5291,11 @@
               "is_bio": false,
               "is_french_meat": true,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Anhydride Sulfureux",
+                "Gluten",
+                "Soja"
+              ]
             },
             {
               "id": "7883",
@@ -4619,7 +5313,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Lait",
+                "Oeufs"
+              ]
             },
             {
               "id": "2430",
@@ -4633,7 +5331,10 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Lait"
+              ]
             },
             {
               "id": "6634",
@@ -4661,7 +5362,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "3722",
@@ -4675,7 +5378,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "6556",
@@ -4689,7 +5394,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "6025",
@@ -4703,7 +5410,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "21",
@@ -4752,7 +5461,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Poisson",
+                  "Soja"
+                ]
               },
               {
                 "id": "9046",
@@ -4766,7 +5479,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Crustacés",
+                  "Gluten",
+                  "Lait"
+                ]
               },
               {
                 "id": "5249",
@@ -4780,7 +5497,13 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Crustacés",
+                  "Gluten",
+                  "Moutarde",
+                  "Oeufs",
+                  "Poisson"
+                ]
               },
               {
                 "id": "8951",
@@ -4824,7 +5547,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Moutarde",
+                  "Poisson"
+                ]
               },
               {
                 "id": "6115",
@@ -4842,7 +5569,11 @@
                 "is_bio": false,
                 "is_french_meat": true,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Anhydride Sulfureux",
+                  "Gluten",
+                  "Soja"
+                ]
               },
               {
                 "id": "7883",
@@ -4860,7 +5591,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Lait",
+                  "Oeufs"
+                ]
               }
             ],
             "accompagnements": [
@@ -4876,7 +5611,10 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Lait"
+                ]
               },
               {
                 "id": "6634",
@@ -4906,7 +5644,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               },
               {
                 "id": "3722",
@@ -4920,7 +5660,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               }
             ],
             "desserts": [
@@ -4936,7 +5678,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               },
               {
                 "id": "6025",
@@ -4950,7 +5694,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               },
               {
                 "id": "21",
@@ -5011,7 +5757,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": true,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Lait",
+                "Oeufs"
+              ]
             },
             {
               "id": "972",
@@ -5025,7 +5775,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "9046",
@@ -5039,7 +5791,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Crustacés",
+                "Gluten",
+                "Lait"
+              ]
             },
             {
               "id": "5249",
@@ -5053,7 +5809,13 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Crustacés",
+                "Gluten",
+                "Moutarde",
+                "Oeufs",
+                "Poisson"
+              ]
             },
             {
               "id": "8951",
@@ -5109,7 +5871,10 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Poisson"
+              ]
             },
             {
               "id": "7398",
@@ -5151,7 +5916,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "8488",
@@ -5165,7 +5932,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "3722",
@@ -5179,7 +5948,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "6556",
@@ -5193,7 +5964,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "6025",
@@ -5207,7 +5980,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "21",
@@ -5260,7 +6035,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": true,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Lait",
+                  "Oeufs"
+                ]
               },
               {
                 "id": "972",
@@ -5274,7 +6053,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               },
               {
                 "id": "9046",
@@ -5288,7 +6069,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Crustacés",
+                  "Gluten",
+                  "Lait"
+                ]
               },
               {
                 "id": "5249",
@@ -5302,7 +6087,13 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Crustacés",
+                  "Gluten",
+                  "Moutarde",
+                  "Oeufs",
+                  "Poisson"
+                ]
               },
               {
                 "id": "8951",
@@ -5360,7 +6151,10 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Poisson"
+                ]
               },
               {
                 "id": "7398",
@@ -5404,7 +6198,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               }
             ],
             "fromages": [
@@ -5420,7 +6216,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               },
               {
                 "id": "3722",
@@ -5434,7 +6232,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               }
             ],
             "desserts": [
@@ -5450,7 +6250,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               },
               {
                 "id": "6025",
@@ -5464,7 +6266,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               },
               {
                 "id": "21",
@@ -5531,7 +6335,10 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Moutarde",
+                "Oeufs"
+              ]
             },
             {
               "id": "3136",
@@ -5545,7 +6352,10 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Lait"
+              ]
             },
             {
               "id": "8541",
@@ -5559,7 +6369,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Moutarde",
+                "Soja"
+              ]
             },
             {
               "id": "6493",
@@ -5587,7 +6401,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "4197",
@@ -5601,7 +6417,10 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Poisson"
+              ]
             },
             {
               "id": "6530",
@@ -5619,7 +6438,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Lait",
+                "Soja"
+              ]
             },
             {
               "id": "2585",
@@ -5633,7 +6456,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Lait",
+                "Soja"
+              ]
             },
             {
               "id": "575",
@@ -5665,7 +6492,10 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Lait"
+              ]
             },
             {
               "id": "3226",
@@ -5679,7 +6509,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "3382",
@@ -5693,7 +6525,10 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Lait"
+              ]
             },
             {
               "id": "1649",
@@ -5711,7 +6546,9 @@
               "is_bio": true,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "665",
@@ -5729,7 +6566,9 @@
               "is_bio": true,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "5642",
@@ -5743,7 +6582,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Lait",
+                "Soja"
+              ]
             },
             {
               "id": "2375",
@@ -5785,7 +6628,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "5992",
@@ -5799,7 +6644,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "2387",
@@ -5838,7 +6685,10 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Moutarde",
+                  "Oeufs"
+                ]
               },
               {
                 "id": "3136",
@@ -5852,7 +6702,10 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Lait"
+                ]
               },
               {
                 "id": "8541",
@@ -5866,7 +6719,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Moutarde",
+                  "Soja"
+                ]
               },
               {
                 "id": "6493",
@@ -5894,7 +6751,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               }
             ],
             "plats": [
@@ -5910,7 +6769,10 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Poisson"
+                ]
               },
               {
                 "id": "6530",
@@ -5928,7 +6790,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Lait",
+                  "Soja"
+                ]
               },
               {
                 "id": "2585",
@@ -5942,7 +6808,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Lait",
+                  "Soja"
+                ]
               },
               {
                 "id": "575",
@@ -5976,7 +6846,10 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Lait"
+                ]
               },
               {
                 "id": "3226",
@@ -5990,7 +6863,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               },
               {
                 "id": "3382",
@@ -6004,7 +6879,10 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Lait"
+                ]
               }
             ],
             "fromages": [
@@ -6024,7 +6902,9 @@
                 "is_bio": true,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               },
               {
                 "id": "665",
@@ -6042,7 +6922,9 @@
                 "is_bio": true,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               }
             ],
             "desserts": [
@@ -6058,7 +6940,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Lait",
+                  "Soja"
+                ]
               },
               {
                 "id": "2375",
@@ -6100,7 +6986,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               },
               {
                 "id": "5992",
@@ -6114,7 +7002,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               },
               {
                 "id": "2387",
@@ -6163,7 +7053,12 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Moutarde",
+                "Oeufs",
+                "Poisson"
+              ]
             },
             {
               "id": "8692",
@@ -6177,7 +7072,10 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait",
+                "Moutarde"
+              ]
             },
             {
               "id": "8542",
@@ -6191,7 +7089,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Moutarde",
+                "Soja"
+              ]
             },
             {
               "id": "6133",
@@ -6205,7 +7107,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "8354",
@@ -6219,7 +7123,10 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Poisson"
+              ]
             },
             {
               "id": "8073",
@@ -6237,7 +7144,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten"
+              ]
             },
             {
               "id": "575",
@@ -6265,7 +7174,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten"
+              ]
             },
             {
               "id": "7250",
@@ -6293,7 +7204,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "8468",
@@ -6311,7 +7224,9 @@
               "is_bio": true,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "3442",
@@ -6325,7 +7240,12 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Lait",
+                "Oeufs",
+                "Soja"
+              ]
             },
             {
               "id": "21",
@@ -6356,7 +7276,12 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Moutarde",
+                  "Oeufs",
+                  "Poisson"
+                ]
               },
               {
                 "id": "8692",
@@ -6370,7 +7295,10 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait",
+                  "Moutarde"
+                ]
               },
               {
                 "id": "8542",
@@ -6384,7 +7312,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Moutarde",
+                  "Soja"
+                ]
               },
               {
                 "id": "6133",
@@ -6398,7 +7330,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               }
             ],
             "plats": [
@@ -6414,7 +7348,10 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Poisson"
+                ]
               },
               {
                 "id": "8073",
@@ -6432,7 +7369,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten"
+                ]
               },
               {
                 "id": "575",
@@ -6462,7 +7401,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten"
+                ]
               },
               {
                 "id": "7250",
@@ -6492,7 +7433,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               },
               {
                 "id": "8468",
@@ -6510,7 +7453,9 @@
                 "is_bio": true,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               }
             ],
             "desserts": [
@@ -6526,7 +7471,12 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Lait",
+                  "Oeufs",
+                  "Soja"
+                ]
               },
               {
                 "id": "21",
@@ -6565,7 +7515,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Moutarde",
+                "Soja"
+              ]
             },
             {
               "id": "3514",
@@ -6597,7 +7551,10 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Moutarde",
+                "Oeufs"
+              ]
             },
             {
               "id": "7896",
@@ -6611,7 +7568,10 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Lait"
+              ]
             },
             {
               "id": "7104",
@@ -6625,7 +7585,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "6954",
@@ -6643,7 +7605,11 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": true,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Lait",
+                "Poisson"
+              ]
             },
             {
               "id": "6955",
@@ -6661,7 +7627,10 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Lait"
+              ]
             },
             {
               "id": "6953",
@@ -6679,7 +7648,10 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": true,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Lait"
+              ]
             },
             {
               "id": "4239",
@@ -6707,7 +7679,10 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Gluten",
+                "Oeufs"
+              ]
             },
             {
               "id": "2878",
@@ -6721,7 +7696,9 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "8468",
@@ -6739,7 +7716,9 @@
               "is_bio": true,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Lait"
+              ]
             },
             {
               "id": "2375",
@@ -6767,7 +7746,13 @@
               "is_bio": false,
               "is_french_meat": false,
               "is_homemade": false,
-              "allergens": []
+              "allergens": [
+                "Fruit à Coque",
+                "Gluten",
+                "Lait",
+                "Oeufs",
+                "Soja"
+              ]
             },
             {
               "id": "2387",
@@ -6802,7 +7787,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Moutarde",
+                  "Soja"
+                ]
               },
               {
                 "id": "3514",
@@ -6834,7 +7823,10 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Moutarde",
+                  "Oeufs"
+                ]
               },
               {
                 "id": "7896",
@@ -6848,7 +7840,10 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Lait"
+                ]
               },
               {
                 "id": "7104",
@@ -6862,7 +7857,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               }
             ],
             "plats": [
@@ -6882,7 +7879,11 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": true,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Lait",
+                  "Poisson"
+                ]
               },
               {
                 "id": "6955",
@@ -6900,7 +7901,10 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Lait"
+                ]
               },
               {
                 "id": "6953",
@@ -6918,7 +7922,10 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": true,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Lait"
+                ]
               }
             ],
             "accompagnements": [
@@ -6948,7 +7955,10 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Gluten",
+                  "Oeufs"
+                ]
               }
             ],
             "fromages": [
@@ -6964,7 +7974,9 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               },
               {
                 "id": "8468",
@@ -6982,7 +7994,9 @@
                 "is_bio": true,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Lait"
+                ]
               }
             ],
             "desserts": [
@@ -7012,7 +8026,13 @@
                 "is_bio": false,
                 "is_french_meat": false,
                 "is_homemade": false,
-                "allergens": []
+                "allergens": [
+                  "Fruit à Coque",
+                  "Gluten",
+                  "Lait",
+                  "Oeufs",
+                  "Soja"
+                ]
               },
               {
                 "id": "2387",

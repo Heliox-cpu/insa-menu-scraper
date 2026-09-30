@@ -54,7 +54,8 @@ def format_dish(dish: Dish) -> str:
 
     info_str = f" ({', '.join(info)})" if info else ""
     badge_str = f" {' '.join(badges)}" if badges else ""
-    return f"  • {c(dish.name, BOLD)}{info_str}{badge_str}"
+    alg_str = f" {c('[Allergènes: ' + ', '.join(dish.allergens) + ']', RED)}" if dish.allergens else ""
+    return f"  • {c(dish.name, BOLD)}{info_str}{badge_str}{alg_str}"
 
 
 def format_category(title: str, dishes: List[Dish]) -> str:
