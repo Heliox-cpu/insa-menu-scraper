@@ -39,3 +39,4 @@ test_*.md
 .vercel
 .vercel*
 node_modules/
+.env*

@@ -107,34 +107,61 @@ class MenuExporter:
     def to_ical(week_menu: WeekMenu) -> str:
         """
         Génère un fichier de calendrier iCalendar (.ics) pour ajouter
-        les déjeuners et dîners dans un agenda (Google Calendar, Apple, etc.).
+        exclusivement les déjeuners et dîners du Restaurant INSA (RI)
+        sans aucune doublette (strictement un événement midi et un soir par jour).
         """
         lines = [
             "BEGIN:VCALENDAR",
             "VERSION:2.0",
-            "PRODID:-//INSA Lyon//Menu Scraper//FR",
+            "PRODID:-//INSA Lyon//Menu Scraper RI//FR",
             "CALSCALE:GREGORIAN",
             "METHOD:PUBLISH",
-            "X-WR-CALNAME:Menus INSA Lyon",
+            "X-WR-CALNAME:Menus Restaurant INSA (RI)",
+            "X-WR-TIMEZONE:Europe/Paris",
         ]
+
+        seen_slots = set()
 
         for day in week_menu.days:
             clean_date = day.date.replace("-", "")
             for meal in day.meals:
+                rest_name = meal.restaurant_name or ""
+                if "saule" in rest_name.lower():
+                    continue
+
                 if meal.is_empty:
                     continue
 
                 is_lunch = meal.meal_type == "lunch"
+                slot_key = (day.date, "lunch" if is_lunch else "dinner")
+                if slot_key in seen_slots:
+                    continue
+                seen_slots.add(slot_key)
+
                 start_hour = "113000" if is_lunch else "184500"
                 end_hour = "134500" if is_lunch else "203000"
 
-                summary = f"Menu {meal.restaurant_name} ({meal.meal_label})"
-                desc_items = []
-                for d in meal.dishes:
-                    desc_items.append(f"- {d.name}")
-                description = "\\n".join(desc_items)
+                meal_title = "Déjeuner" if is_lunch else "Dîner"
+                summary = f"🍽️ RI - {meal_title}"
 
-                uid = f"{day.date}-{meal.restaurant_id}-{meal.meal_type}@insa-lyon.fr"
+                desc_lines = [f"🍽️ Menu {meal_title} au Restaurant INSA (RI) :"]
+                for cat, label in [
+                    ("ENTREE", "Salades & Entrées"),
+                    ("PLAT", "Plats chauds"),
+                    ("GARNITURE", "Accompagnements"),
+                    ("FROMAGE", "Fromages & Laitages"),
+                    ("DESSERT", "Desserts"),
+                ]:
+                    cat_dishes = [d for d in meal.dishes if (d.category or "").upper() == cat]
+                    if cat_dishes:
+                        desc_lines.append(f"\\n[{label}]")
+                        for d in cat_dishes:
+                            cal = f" ({d.calories} kcal)" if d.calories else ""
+                            algs = f" [⚠️ {', '.join(d.allergens)}]" if d.allergens else ""
+                            desc_lines.append(f"• {d.name}{cal}{algs}")
+
+                description = "\\n".join(desc_lines)
+                uid = f"{day.date}-ri-{'lunch' if is_lunch else 'dinner'}@insa-lyon.fr"
 
                 lines.extend([
                     "BEGIN:VEVENT",
@@ -143,7 +170,9 @@ class MenuExporter:
                     f"DTEND:{clean_date}T{end_hour}",
                     f"SUMMARY:{summary}",
                     f"DESCRIPTION:{description}",
-                    f"LOCATION:{meal.restaurant_name}, Campus de la Doua",
+                    "LOCATION:Le Restaurant INSA (RI), Campus LyonTech La Doua",
+                    "STATUS:CONFIRMED",
+                    "CATEGORIES:RESTAURATION",
                     "END:VEVENT",
                 ])
 

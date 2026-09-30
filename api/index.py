@@ -75,35 +75,61 @@ def get_cached_week_dict(ref_date: str | None = None) -> dict:
 
 
 def dict_to_ical(week_dict: dict) -> str:
-    """Génère un flux iCalendar (.ics) depuis le dictionnaire du menu."""
+    """Génère un flux iCalendar (.ics) depuis le dictionnaire du menu pour le RI uniquement."""
     lines = [
         "BEGIN:VCALENDAR",
         "VERSION:2.0",
-        "PRODID:-//INSA Lyon//Menu Scraper//FR",
+        "PRODID:-//INSA Lyon//Menu Scraper RI//FR",
         "CALSCALE:GREGORIAN",
         "METHOD:PUBLISH",
-        "X-WR-CALNAME:Menus INSA Lyon",
+        "X-WR-CALNAME:Menus Restaurant INSA (RI)",
+        "X-WR-TIMEZONE:Europe/Paris",
     ]
+
+    seen_slots = set()
 
     for day in week_dict.get("days", []):
         date_str = day.get("date", "")
         clean_date = date_str.replace("-", "")
         for meal in day.get("meals", []):
+            rest_name = meal.get("restaurant_name", "")
+            if "saule" in rest_name.lower():
+                continue
+
             dishes = meal.get("dishes", [])
             if not dishes:
                 continue
 
             is_lunch = meal.get("meal_type") == "lunch"
+            slot_key = (date_str, "lunch" if is_lunch else "dinner")
+            if slot_key in seen_slots:
+                continue
+            seen_slots.add(slot_key)
+
             start_hour = "113000" if is_lunch else "184500"
             end_hour = "134500" if is_lunch else "203000"
 
-            rest_name = meal.get("restaurant_name", "Le Restaurant INSA (RI)")
-            meal_label = meal.get("meal_label", "Déjeuner")
-            summary = f"Menu {rest_name} ({meal_label})"
-            desc_items = [f"- {d.get('name')}" for d in dishes]
-            description = "\\n".join(desc_items)
+            meal_title = "Déjeuner" if is_lunch else "Dîner"
+            summary = f"🍽️ RI - {meal_title}"
 
-            uid = f"{date_str}-{meal.get('restaurant_id', '4')}-{meal.get('meal_type', 'lunch')}@insa-lyon.fr"
+            desc_lines = [f"🍽️ Menu {meal_title} au Restaurant INSA (RI) :"]
+            for cat, label in [
+                ("ENTREE", "Salades & Entrées"),
+                ("PLAT", "Plats chauds"),
+                ("GARNITURE", "Accompagnements"),
+                ("FROMAGE", "Fromages & Laitages"),
+                ("DESSERT", "Desserts"),
+            ]:
+                cat_dishes = [d for d in dishes if (d.get("category") or "").upper() == cat]
+                if cat_dishes:
+                    desc_lines.append(f"\\n[{label}]")
+                    for d in cat_dishes:
+                        cal = f" ({d.get('calories')} kcal)" if d.get('calories') else ""
+                        algs = f" [⚠️ {', '.join(d.get('allergens', []))}]" if d.get('allergens') else ""
+                        desc_lines.append(f"• {d.get('name')}{cal}{algs}")
+
+            description = "\\n".join(desc_lines)
+            uid = f"{date_str}-ri-{'lunch' if is_lunch else 'dinner'}@insa-lyon.fr"
 
             lines.extend([
                 "BEGIN:VEVENT",
@@ -112,7 +138,9 @@ def dict_to_ical(week_dict: dict) -> str:
                 f"DTEND:{clean_date}T{end_hour}",
                 f"SUMMARY:{summary}",
                 f"DESCRIPTION:{description}",
-                f"LOCATION:{rest_name}, Campus de la Doua",
+                "LOCATION:Le Restaurant INSA (RI), Campus LyonTech La Doua",
+                "STATUS:CONFIRMED",
+                "CATEGORIES:RESTAURATION",
                 "END:VEVENT",
             ])
 
