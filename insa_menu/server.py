@@ -68,6 +68,17 @@ class InsaMenuWebHandler(http.server.SimpleHTTPRequestHandler):
         # 4. API: Fiche technique d'un plat par ID
         elif path.startswith("/api/dish/"):
             dish_id = path.split("/")[-1]
+            cached_dishes_file = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "cached_dishes.json")
+            if os.path.exists(cached_dishes_file):
+                try:
+                    with open(cached_dishes_file, "r", encoding="utf-8") as f:
+                        dishes_cache = json.load(f)
+                    if dish_id in dishes_cache:
+                        self._send_json(dishes_cache[dish_id])
+                        return
+                except Exception:
+                    pass
+
             try:
                 client = InsaMenuClient()
                 detail = client.get_dish_detail(dish_id)

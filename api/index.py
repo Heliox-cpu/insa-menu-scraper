@@ -240,28 +240,55 @@ class handler(http.server.BaseHTTPRequestHandler):
         # 3. API: Fiche plat par ID
         elif "/dish/" in req_route:
             dish_id = req_route.rstrip("/").split("/")[-1]
-            try:
-                detail = client_inst.get_dish_detail(dish_id)
-                self._send_json(detail)
-            except Exception:
-                # Fallback: rechercher dans les plats locaux
-                week_dict = get_cached_week_dict()
-                found_dish = None
-                for day in week_dict.get("days", []):
-                    for meal in day.get("meals", []):
-                        for dish in meal.get("dishes", []):
-                            if str(dish.get("id")) == str(dish_id):
-                                found_dish = dish
-                                break
+            # 1. Vérifier si la fiche détaillée existe dans cached_dishes.json
+            cached_dishes_file = os.path.join(root_dir, "data", "cached_dishes.json")
+            if os.path.exists(cached_dishes_file):
+                try:
+                    with open(cached_dishes_file, "r", encoding="utf-8") as f:
+                        dishes_cache = json.load(f)
+                    if dish_id in dishes_cache:
+                        self._send_json(dishes_cache[dish_id])
+                        return
+                except Exception:
+                    pass
+
+            # 2. Tentative API en direct si hors Vercel
+            if not os.environ.get("VERCEL"):
+                try:
+                    detail = client_inst.get_dish_detail(dish_id)
+                    self._send_json(detail)
+                    return
+                except Exception:
+                    pass
+
+            # 3. Fallback: rechercher dans les plats locaux
+            week_dict = get_cached_week_dict()
+            found_dish = None
+            for day in week_dict.get("days", []):
+                for meal in day.get("meals", []):
+                    for dish in meal.get("dishes", []):
+                        if str(dish.get("id")) == str(dish_id):
+                            found_dish = dish
+                            break
+                    if found_dish:
+                        break
                 if found_dish:
-                    self._send_json({
-                        "FicheTechnique": {"LibFit": found_dish.get("name")},
-                        "Marchandises": [{"LibDen": found_dish.get("name")}],
-                        "Allergenes": [],
-                        "OrigineViandes": [],
-                    })
-                else:
-                    self._send_json({"error": "Plat non trouvé"}, status=404)
+                    break
+
+            if found_dish:
+                algs_objs = [{"LibAlg": a} for a in found_dish.get("allergens", [])]
+                self._send_json({
+                    "FicheTechnique": {
+                        "LibFit": found_dish.get("name"),
+                        "KilCal": str(found_dish.get("calories") or "0"),
+                        "PdsNet": str((found_dish.get("net_weight") or 0) / 1000.0),
+                    },
+                    "Marchandises": [{"LibDen": found_dish.get("name")}],
+                    "Allergenes": algs_objs,
+                    "OrigineViandes": [],
+                })
+            else:
+                self._send_json({"error": "Plat non trouvé"}, status=404)
 
         # 4. API: Allergènes
         elif req_route in ("/api/allergens", "/allergens") or req_route.endswith("/allergens"):

@@ -700,22 +700,43 @@ python3 -m insa_menu.cli dish 8719
     <div class="dialog-header">
       <div>
         <h3 id="dialogTitle">Fiche du plat</h3>
-        <p id="dialogSub" style="color: var(--text-muted); font-size: 0.825rem;"></p>
+        <div id="dialogMetaBadges" style="margin-top: 0.35rem; display: flex; flex-wrap: wrap; gap: 0.35rem;"></div>
       </div>
       <button class="dialog-close" id="dialogClose">&times;</button>
     </div>
     <div id="dialogBody">
+      <!-- Statistiques nutritionnelles et poids -->
+      <div class="modal-stats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 0.75rem; margin-bottom: 1.25rem;">
+        <div class="stat-card" style="background: var(--bg); padding: 0.6rem 0.8rem; border-radius: 6px; border: 1px solid var(--card-border); text-align: center;">
+          <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">⚖️ Poids Net</div>
+          <div id="dialogWeight" style="font-size: 1.05rem; font-weight: 700; color: var(--text); margin-top: 0.2rem;">—</div>
+        </div>
+        <div class="stat-card" style="background: var(--bg); padding: 0.6rem 0.8rem; border-radius: 6px; border: 1px solid var(--card-border); text-align: center;">
+          <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">🔥 Énergie</div>
+          <div id="dialogCalories" style="font-size: 1.05rem; font-weight: 700; color: var(--text); margin-top: 0.2rem;">—</div>
+        </div>
+        <div class="stat-card" style="background: var(--bg); padding: 0.6rem 0.8rem; border-radius: 6px; border: 1px solid var(--card-border); text-align: center;">
+          <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">🏷️ Référence</div>
+          <div id="dialogDishRef" style="font-size: 1.05rem; font-weight: 700; color: var(--text-muted); margin-top: 0.2rem;">—</div>
+        </div>
+      </div>
+
+      <!-- Allergènes -->
       <div class="modal-section">
-        <h4>Marchandises & Ingrédients</h4>
+        <h4>⚠️ Allergènes déclarés</h4>
+        <div id="dialogAllergens" style="font-size: 0.85rem; display: flex; flex-wrap: wrap; gap: 0.35rem;"></div>
+      </div>
+
+      <!-- Ingrédients & Marchandises -->
+      <div class="modal-section">
+        <h4>📦 Composition & Ingrédients</h4>
         <ul id="dialogIngredients" class="modal-list"></ul>
       </div>
+
+      <!-- Origine des viandes -->
       <div class="modal-section" id="dialogMeatSection" style="display: none;">
-        <h4>Origine des viandes</h4>
+        <h4>🥩 Origine des viandes (Traçabilité)</h4>
         <ul id="dialogMeat" class="modal-list"></ul>
-      </div>
-      <div class="modal-section">
-        <h4>Allergènes répertoriés</h4>
-        <div id="dialogAllergens" style="font-size: 0.85rem; color: var(--text-muted);"></div>
       </div>
     </div>
   </dialog>
@@ -798,41 +819,98 @@ python3 -m insa_menu.cli dish 8719
     async function openDishDetail(dishId) {
       if (!dishId) return;
 
-      let dishName = 'Fiche du plat';
+      // 1. Recherche du plat dans weekData pour un affichage instantané
+      let foundDish = null;
       if (weekData && weekData.days) {
         for (const day of weekData.days) {
           for (const meal of (day.meals || [])) {
             const found = (meal.dishes || []).find(d => String(d.id) === String(dishId));
-            if (found) { dishName = found.name; break; }
+            if (found) { foundDish = found; break; }
           }
-          if (dishName !== 'Fiche du plat') break;
+          if (foundDish) break;
         }
       }
 
+      const dishName = foundDish ? foundDish.name : `Plat #${dishId}`;
       document.getElementById('dialogTitle').textContent = dishName;
-      document.getElementById('dialogSub').textContent = `Fiche technique ID #${dishId}`;
-      document.getElementById('dialogIngredients').innerHTML = '<li>⏳ Chargement des informations...</li>';
+      document.getElementById('dialogDishRef').textContent = `#${dishId}`;
+
+      // Badges
+      const badgesContainer = document.getElementById('dialogMetaBadges');
+      badgesContainer.innerHTML = '';
+      if (foundDish) {
+        if (foundDish.category) {
+          const catSpan = document.createElement('span');
+          catSpan.className = 'badge';
+          catSpan.style.background = 'var(--insa-red-light)';
+          catSpan.style.color = 'var(--insa-red)';
+          catSpan.textContent = foundDish.category;
+          badgesContainer.appendChild(catSpan);
+        }
+        if (foundDish.is_vegetarian) badgesContainer.innerHTML += '<span class="badge badge-veg">🌱 Végétarien</span>';
+        if (foundDish.is_bio) badgesContainer.innerHTML += '<span class="badge badge-bio">🌿 Bio</span>';
+        if (foundDish.is_french_meat) badgesContainer.innerHTML += '<span class="badge badge-vf">🇫🇷 Viande FR</span>';
+        if (foundDish.is_homemade) badgesContainer.innerHTML += '<span class="badge badge-fm">👨‍🍳 Fait maison</span>';
+      }
+
+      // Poids et Calories pré-remplis
+      const weightEl = document.getElementById('dialogWeight');
+      const calEl = document.getElementById('dialogCalories');
+      weightEl.textContent = (foundDish && foundDish.net_weight) ? `${foundDish.net_weight} g` : '—';
+      calEl.textContent = (foundDish && foundDish.calories) ? `${foundDish.calories} kcal` : '—';
+
+      // Allergènes pré-remplis
+      const algDiv = document.getElementById('dialogAllergens');
+      const preAlgs = (foundDish && foundDish.allergens) || [];
+      if (preAlgs.length > 0) {
+        algDiv.innerHTML = preAlgs.map(a => `<span class="badge badge-alg" style="font-size: 0.8rem; padding: 0.25rem 0.55rem;">⚠️ ${a}</span>`).join(' ');
+      } else {
+        algDiv.innerHTML = '<span style="color: var(--text-muted); font-size: 0.85rem;">✅ Aucun allergène majeur déclaré</span>';
+      }
+
+      // Marchandises & viandes
+      const ingList = document.getElementById('dialogIngredients');
+      ingList.innerHTML = '<li>⏳ Chargement de la composition détaillée...</li>';
       document.getElementById('dialogMeatSection').style.display = 'none';
-      document.getElementById('dialogAllergens').textContent = 'Chargement...';
+
       dishDialog.showModal();
 
+      // 2. Récupération des données techniques complètes
       try {
         const res = await fetch(`/api/dish/${dishId}`);
         const data = await res.json();
 
-        const ingList = document.getElementById('dialogIngredients');
+        // Poids / Calories depuis FicheTechnique
+        if (data.FicheTechnique) {
+          if (data.FicheTechnique.PdsNet && parseFloat(data.FicheTechnique.PdsNet) > 0) {
+            const rawPds = parseFloat(data.FicheTechnique.PdsNet);
+            const pdsG = rawPds < 2.0 ? Math.round(rawPds * 1000) : Math.round(rawPds);
+            weightEl.textContent = `${pdsG} g`;
+          }
+          if (data.FicheTechnique.KilCal && parseFloat(data.FicheTechnique.KilCal) > 0) {
+            calEl.textContent = `${Math.round(parseFloat(data.FicheTechnique.KilCal))} kcal`;
+          }
+        }
+
+        // Allergènes officiels
+        if (data.Allergenes && data.Allergenes.length > 0) {
+          algDiv.innerHTML = data.Allergenes.map(a => `<span class="badge badge-alg" style="font-size: 0.8rem; padding: 0.25rem 0.55rem;">⚠️ ${a.LibAlg || a}</span>`).join(' ');
+        }
+
+        // Marchandises / Composition
         ingList.innerHTML = '';
         if (data.Marchandises && data.Marchandises.length > 0) {
           data.Marchandises.forEach(m => {
             const li = document.createElement('li');
-            const qte = m.QteCom ? ` (${m.QteCom} kg)` : '';
+            const qte = m.QteCom && parseFloat(m.QteCom) > 0 ? ` — ${m.QteCom} kg` : '';
             li.textContent = `${m.LibDen || 'Article'}${qte}`;
             ingList.appendChild(li);
           });
         } else {
-          ingList.innerHTML = '<li>Aucun détail d\'ingrédient renseigné.</li>';
+          ingList.innerHTML = `<li>Composition principale : ${dishName}</li>`;
         }
 
+        // Origine des viandes
         const meatSec = document.getElementById('dialogMeatSection');
         const meatList = document.getElementById('dialogMeat');
         meatList.innerHTML = '';
@@ -844,19 +922,10 @@ python3 -m insa_menu.cli dish 8719
             meatList.appendChild(li);
           });
         }
-
-        const algDiv = document.getElementById('dialogAllergens');
-        const algList = (data.Allergenes && data.Allergenes.length > 0)
-          ? data.Allergenes.map(a => a.LibAlg).filter(Boolean)
-          : [];
-
-        if (algList.length > 0) {
-          algDiv.innerHTML = algList.map(a => `<span class="badge badge-alg" style="font-size: 0.8rem; padding: 0.25rem 0.5rem; margin-right: 0.35rem; margin-bottom: 0.35rem;">⚠️ ${a}</span>`).join('');
-        } else {
-          algDiv.textContent = 'Aucun allergène majeur déclaré.';
-        }
       } catch (err) {
-        document.getElementById('dialogIngredients').innerHTML = `<li>Détails non disponibles : ${err.message}</li>`;
+        if (!foundDish) {
+          ingList.innerHTML = `<li>Détails non disponibles : ${err.message}</li>`;
+        }
       }
     }
 
