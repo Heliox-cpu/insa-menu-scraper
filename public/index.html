@@ -654,6 +654,9 @@
         <div class="filter-chip" data-filter="nolactose">🚫 Sans lait</div>
         <div class="filter-chip" data-filter="noegg">🚫 Sans œuf</div>
         <div class="filter-chip" data-filter="nonuts">🚫 Sans fruit à coque</div>
+        <button type="button" id="toggleCardAllergens" class="filter-chip" style="margin-left: auto;" title="Afficher ou masquer les étiquettes d'allergènes sur les cartes">
+          <span>⚠️</span> <span id="cardAllergensLabel">Allergènes sur cartes : Non</span>
+        </button>
       </div>
     </div>
 
@@ -866,6 +869,32 @@ python3 -m insa_menu.cli dish 8719
         renderView();
       });
     });
+
+    // Option d'affichage des allergènes sur les cartes (désactivé par défaut)
+    let showCardAllergens = localStorage.getItem('insa-show-card-allergens') === 'true';
+    const toggleCardAllergens = document.getElementById('toggleCardAllergens');
+    const cardAllergensLabel = document.getElementById('cardAllergensLabel');
+
+    function updateCardAllergensButton() {
+      if (!toggleCardAllergens) return;
+      if (showCardAllergens) {
+        toggleCardAllergens.classList.add('active');
+        cardAllergensLabel.textContent = 'Allergènes sur cartes : Oui';
+      } else {
+        toggleCardAllergens.classList.remove('active');
+        cardAllergensLabel.textContent = 'Allergènes sur cartes : Non';
+      }
+    }
+    updateCardAllergensButton();
+
+    if (toggleCardAllergens) {
+      toggleCardAllergens.addEventListener('click', () => {
+        showCardAllergens = !showCardAllergens;
+        localStorage.setItem('insa-show-card-allergens', showCardAllergens);
+        updateCardAllergensButton();
+        renderView();
+      });
+    }
 
     searchInput.addEventListener('input', (e) => {
       searchQuery = e.target.value.toLowerCase().trim();
@@ -1080,7 +1109,7 @@ python3 -m insa_menu.cli dish 8719
       if (dish.is_homemade) badges.push('<span class="badge badge-fm">👨‍🍳 Fait maison</span>');
       if (dish.calories) badges.push(`<span class="badge badge-cal">🔥 ${dish.calories} kcal</span>`);
       if (dish.net_weight) badges.push(`<span class="badge badge-cal">⚖️ ${dish.net_weight} g</span>`);
-      if (dish.allergens && dish.allergens.length > 0) {
+      if (showCardAllergens && dish.allergens && dish.allergens.length > 0) {
         badges.push(`<span class="badge badge-alg" title="Allergènes : ${dish.allergens.join(', ')}">⚠️ ${dish.allergens.join(', ')}</span>`);
       }
 
