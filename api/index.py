@@ -114,21 +114,36 @@ def dict_to_ical(week_dict: dict) -> str:
             meal_title = "Déjeuner" if is_lunch else "Dîner"
             summary = f"🍽️ RI - {meal_title}"
 
-            desc_lines = [f"🍽️ Menu {meal_title} au Restaurant INSA (RI) :"]
-            for cat, label in [
-                ("ENTREE", "Salades & Entrées"),
-                ("PLAT", "Plats chauds"),
-                ("GARNITURE", "Accompagnements"),
-                ("FROMAGE", "Fromages & Laitages"),
-                ("DESSERT", "Desserts"),
-            ]:
-                cat_dishes = [d for d in dishes if (d.get("category") or "").upper() == cat]
+            desc_lines = []
+            sections = [
+                ("ENTREE", "🥗 ENTRÉES"),
+                ("PLAT", "🍲 PLATS"),
+                ("GARNITURE", "🍟 ACCOMPAGNEMENTS"),
+                ("FROMAGE", "🧀 FROMAGES"),
+                ("DESSERT", "🍰 DESSERTS & FRUITS"),
+            ]
+            known_cats = {"ENTREE", "PLAT", "GARNITURE", "SAUCE", "FROMAGE", "DESSERT"}
+
+            for cat, label in sections:
+                if cat == "GARNITURE":
+                    cat_dishes = [d for d in dishes if (d.get("category") or "").upper() in ("GARNITURE", "SAUCE")]
+                else:
+                    cat_dishes = [d for d in dishes if (d.get("category") or "").upper() == cat]
+
                 if cat_dishes:
-                    desc_lines.append(f"\\n[{label}]")
+                    if desc_lines:
+                        desc_lines.append("")
+                    desc_lines.append(f"{label} :")
                     for d in cat_dishes:
-                        cal = f" ({d.get('calories')} kcal)" if d.get('calories') else ""
-                        algs = f" [⚠️ {', '.join(d.get('allergens', []))}]" if d.get('allergens') else ""
-                        desc_lines.append(f"• {d.get('name')}{cal}{algs}")
+                        desc_lines.append(f"• {d.get('name')}")
+
+            other_dishes = [d for d in dishes if (d.get("category") or "").upper() not in known_cats]
+            if other_dishes:
+                if desc_lines:
+                    desc_lines.append("")
+                desc_lines.append("🍽️ AUTRES :")
+                for d in other_dishes:
+                    desc_lines.append(f"• {d.get('name')}")
 
             description = "\\n".join(desc_lines)
             uid = f"{date_str}-ri-{'lunch' if is_lunch else 'dinner'}@insa-lyon.fr"

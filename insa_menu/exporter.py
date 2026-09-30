@@ -146,21 +146,36 @@ class MenuExporter:
                 meal_title = "Déjeuner" if is_lunch else "Dîner"
                 summary = f"🍽️ RI - {meal_title}"
 
-                desc_lines = [f"🍽️ Menu {meal_title} au Restaurant INSA (RI) :"]
-                for cat, label in [
-                    ("ENTREE", "Salades & Entrées"),
-                    ("PLAT", "Plats chauds"),
-                    ("GARNITURE", "Accompagnements"),
-                    ("FROMAGE", "Fromages & Laitages"),
-                    ("DESSERT", "Desserts"),
-                ]:
-                    cat_dishes = [d for d in meal.dishes if (d.category or "").upper() == cat]
+                desc_lines = []
+                sections = [
+                    ("ENTREE", "🥗 ENTRÉES"),
+                    ("PLAT", "🍲 PLATS"),
+                    ("GARNITURE", "🍟 ACCOMPAGNEMENTS"),
+                    ("FROMAGE", "🧀 FROMAGES"),
+                    ("DESSERT", "🍰 DESSERTS & FRUITS"),
+                ]
+                known_cats = {"ENTREE", "PLAT", "GARNITURE", "SAUCE", "FROMAGE", "DESSERT"}
+
+                for cat, label in sections:
+                    if cat == "GARNITURE":
+                        cat_dishes = [d for d in meal.dishes if (d.category or "").upper() in ("GARNITURE", "SAUCE")]
+                    else:
+                        cat_dishes = [d for d in meal.dishes if (d.category or "").upper() == cat]
+
                     if cat_dishes:
-                        desc_lines.append(f"\\n[{label}]")
+                        if desc_lines:
+                            desc_lines.append("")
+                        desc_lines.append(f"{label} :")
                         for d in cat_dishes:
-                            cal = f" ({d.calories} kcal)" if d.calories else ""
-                            algs = f" [⚠️ {', '.join(d.allergens)}]" if d.allergens else ""
-                            desc_lines.append(f"• {d.name}{cal}{algs}")
+                            desc_lines.append(f"• {d.name}")
+
+                other_dishes = [d for d in meal.dishes if (d.category or "").upper() not in known_cats]
+                if other_dishes:
+                    if desc_lines:
+                        desc_lines.append("")
+                    desc_lines.append("🍽️ AUTRES :")
+                    for d in other_dishes:
+                        desc_lines.append(f"• {d.name}")
 
                 description = "\\n".join(desc_lines)
                 uid = f"{day.date}-ri-{'lunch' if is_lunch else 'dinner'}@insa-lyon.fr"
