@@ -1,0 +1,41 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Output files
+*.ics
+*.md.tmp
+*.json.tmp
+test_*.md
+
+# IDEs & Deploy
+.idea/
+.vscode/
+*.swp
+.vercel
+.vercel*
+node_modules/

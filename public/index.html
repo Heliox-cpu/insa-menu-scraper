@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menus INSA Lyon — Le Restaurant INSA (RI)</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23CD1A24%22/><text x=%2250%22 y=%2270%22 font-size=%2255%22 font-family=%22system-ui,sans-serif%22 font-weight=%22900%22 fill=%22white%22 text-anchor=%22middle%22>INSA</text></svg>">
+  <style>
+    :root {
+      --insa-red: #CD1A24;
+      --insa-red-hover: #b0141d;
+      --insa-red-light: #fef2f2;
+      --insa-red-border: #fecaca;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --card-border: #e2e8f0;
+      --card-border-hover: #cbd5e1;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --badge-veg-bg: #ecfdf5;
+      --badge-veg-txt: #065f46;
+      --badge-bio-bg: #f0fdf4;
+      --badge-bio-txt: #166534;
+      --badge-vf-bg: #eff6ff;
+      --badge-vf-txt: #1e40af;
+      --badge-fm-bg: #fffbeb;
+      --badge-fm-txt: #92400e;
+      --radius: 10px;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    [data-theme="dark"] {
+      --bg: #121214;
+      --card-bg: #1a1a1e;
+      --card-border: #27272a;
+      --card-border-hover: #3f3f46;
+      --text: #f4f4f5;
+      --text-muted: #a1a1aa;
+      --insa-red-light: rgba(205, 26, 36, 0.15);
+      --insa-red-border: rgba(205, 26, 36, 0.3);
+      --badge-veg-bg: rgba(16, 185, 129, 0.15);
+      --badge-veg-txt: #6ee7b7;
+      --badge-bio-bg: rgba(34, 197, 94, 0.15);
+      --badge-bio-txt: #86efac;
+      --badge-vf-bg: rgba(59, 130, 246, 0.15);
+      --badge-vf-txt: #93c5fd;
+      --badge-fm-bg: rgba(245, 158, 11, 0.15);
+      --badge-fm-txt: #fde68a;
+      --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+      --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 0 1rem 3rem 1rem;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    /* Ligne rouge identitaire INSA en haut de page */
+    .top-accent-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--insa-red);
+      z-index: 1000;
+    }
+
+    header {
+      max-width: 1200px;
+      margin: 1.5rem auto 1.5rem auto;
+      padding-top: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.25rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .insa-logo-badge {
+      background: var(--insa-red);
+      color: white;
+      font-weight: 900;
+      font-size: 1.25rem;
+      letter-spacing: 0.08em;
+      padding: 0.4rem 0.75rem;
+      border-radius: 6px;
+      line-height: 1;
+      display: inline-block;
+      box-shadow: 0 2px 4px rgba(205, 26, 36, 0.25);
+    }
+
+    .brand-text h1 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .brand-text p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.45rem 0.85rem;
+      border-radius: 6px;
+      font-size: 0.825rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid var(--card-border);
+      background: var(--card-bg);
+      color: var(--text);
+      transition: all 0.15s ease;
+      text-decoration: none;
+    }
+    .btn:hover {
+      border-color: var(--insa-red);
+      color: var(--insa-red);
+    }
+    .btn-primary {
+      background: var(--insa-red);
+      color: white;
+      border-color: var(--insa-red);
+    }
+    .btn-primary:hover {
+      background: var(--insa-red-hover);
+      border-color: var(--insa-red-hover);
+      color: white;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Barre de contrôle et filtres */
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 0.85rem 1.25rem;
+      border-radius: var(--radius);
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .view-tabs {
+      display: flex;
+      gap: 0.35rem;
+      background: var(--bg);
+      padding: 0.25rem;
+      border-radius: 8px;
+      border: 1px solid var(--card-border);
+    }
+    .tab-btn {
+      padding: 0.4rem 0.9rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      transition: all 0.15s;
+    }
+    .tab-btn.active {
+      background: var(--card-bg);
+      color: var(--insa-red);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .filters-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+    .filter-chip {
+      padding: 0.3rem 0.65rem;
+      border-radius: 9999px;
+      font-size: 0.775rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: var(--bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      user-select: none;
+      transition: all 0.15s;
+    }
+    .filter-chip:hover {
+      border-color: var(--card-border-hover);
+      color: var(--text);
+    }
+    .filter-chip.active {
+      background: var(--insa-red);
+      border-color: var(--insa-red);
+      color: #ffffff;
+    }
+
+    .search-input {
+      padding: 0.4rem 0.75rem;
+      border-radius: 6px;
+      border: 1px solid var(--card-border);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 0.825rem;
+      outline: none;
+      min-width: 170px;
+    }
+    .search-input:focus {
+      border-color: var(--insa-red);
+    }
+
+    /* Sélecteur de jour */
+    .day-selector {
+      display: flex;
+      gap: 0.5rem;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .day-pill {
+      flex: 1;
+      min-width: 110px;
+      padding: 0.65rem 0.5rem;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.15s;
+      box-shadow: var(--shadow-sm);
+    }
+    .day-pill:hover {
+      border-color: var(--insa-red);
+    }
+    .day-pill.active {
+      border-color: var(--insa-red);
+      background: var(--insa-red-light);
+    }
+    .day-pill .day-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .day-pill.active .day-title {
+      color: var(--insa-red);
+    }
+    .day-pill .day-sub {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* Grille des repas */
+    .meals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .meals-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Vue Semaine Entière */
+    .week-view-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      width: 100%;
+    }
+    .week-day-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .week-day-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1.25rem;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-left: 5px solid var(--insa-red);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+    }
+    .week-day-title {
+      display: flex;
+      align-items: baseline;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+    }
+    .week-day-name {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text);
+    }
+    .week-day-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .week-day-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--insa-red);
+      background: var(--insa-red-light);
+      border: 1px solid var(--insa-red-border);
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+    }
+    .week-day-meals {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .week-day-meals {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .meal-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-top: 3px solid var(--insa-red);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .meal-header {
+      padding: 1rem 1.25rem;
+      background: var(--bg);
+      border-bottom: 1px solid var(--card-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .meal-header h2 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .meal-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 9999px;
+      background: var(--insa-red-light);
+      color: var(--insa-red);
+      border: 1px solid var(--insa-red-border);
+    }
+
+    .meal-content {
+      padding: 1.25rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .dish-category {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+    .category-title {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--insa-red);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .dish-item {
+      padding: 0.55rem 0.75rem;
+      border-radius: 6px;
+      background: var(--bg);
+      border: 1px solid var(--card-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.6rem;
+      transition: all 0.15s;
+    }
+    .dish-item:hover {
+      border-color: var(--insa-red);
+      background: var(--card-bg);
+    }
+
+    .dish-main-info {
+      flex: 1;
+    }
+    .dish-name {
+      font-size: 0.885rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .dish-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.35rem;
+      margin-top: 0.25rem;
+    }
+
+    .badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
+    }
+    .badge-veg { background: var(--badge-veg-bg); color: var(--badge-veg-txt); }
+    .badge-bio { background: var(--badge-bio-bg); color: var(--badge-bio-txt); }
+    .badge-vf  { background: var(--badge-vf-bg); color: var(--badge-vf-txt); }
+    .badge-fm  { background: var(--badge-fm-bg); color: var(--badge-fm-txt); }
+    .badge-cal { background: rgba(148, 163, 184, 0.15); color: var(--text-muted); }
+
+    .btn-detail {
+      background: transparent;
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      border-radius: 5px;
+      padding: 0.25rem 0.5rem;
+      font-size: 0.725rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s;
+    }
+    .btn-detail:hover {
+      border-color: var(--insa-red);
+      color: var(--insa-red);
+      background: var(--card-bg);
+    }
+
+    /* Modale / Dialog */
+    dialog {
+      margin: auto;
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      background: var(--card-bg);
+      color: var(--text);
+      max-width: 580px;
+      width: 90%;
+      padding: 1.5rem;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25), 0 8px 10px -6px rgba(0, 0, 0, 0.25);
+    }
+    dialog::backdrop {
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(2px);
+    }
+    .dialog-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .dialog-header h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .dialog-close {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.4rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .dialog-close:hover {
+      color: var(--insa-red);
+    }
+
+    .modal-section {
+      margin-bottom: 1rem;
+    }
+    .modal-section h4 {
+      font-size: 0.825rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--insa-red);
+      margin-bottom: 0.4rem;
+    }
+    .modal-list {
+      list-style: none;
+      font-size: 0.85rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .modal-list li {
+      padding: 0.35rem 0.65rem;
+      background: var(--bg);
+      border-radius: 6px;
+      border: 1px solid var(--card-border);
+    }
+
+    /* CLI & API Box */
+    .cli-box {
+      margin-top: 2rem;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .cli-box h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.65rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .code-block {
+      background: #18181b;
+      color: #f43f5e;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.85rem;
+      padding: 0.85rem 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      margin-bottom: 1rem;
+      border: 1px solid #27272a;
+    }
+
+    .api-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--text-muted);
+      grid-column: 1 / -1;
+    }
+
+    footer {
+      max-width: 1200px;
+      margin: 3rem auto 1rem auto;
+      text-align: center;
+      font-size: 0.825rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--card-border);
+      padding-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-accent-bar"></div>
+
+  <header>
+    <div class="brand">
+      <div class="insa-logo-badge">INSA</div>
+      <div class="brand-text">
+        <h1>Menus des Restaurants</h1>
+        <p>Le Restaurant INSA (RI) • Données officielles en direct</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button id="themeToggle" class="btn" title="Basculer le thème">🌓 Thème</button>
+      <a href="/menu.ics" class="btn btn-primary" download="insa_menus.ics">📅 Agenda (.ics)</a>
+      <a href="/api/export?format=md" class="btn" download="menus_insa.md">📄 Markdown</a>
+      <a href="/api/export?format=csv" class="btn" download="menus_insa.csv">📊 CSV</a>
+      <a href="/api/export?format=json" class="btn" download="menus_insa.json">📦 JSON</a>
+      <button id="btnCopyDiscord" class="btn" title="Copier le menu du jour">📋 Copier résumé</button>
+      <button id="btnRefresh" class="btn" title="Recharger les données">🔄 Actualiser</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Contrôles et Filtres -->
+    <div class="controls">
+      <div class="view-tabs">
+        <button class="tab-btn active" data-view="day">Vue du Jour</button>
+        <button class="tab-btn" data-view="week">Semaine Entière</button>
+        <button class="tab-btn" data-view="api">API & CLI</button>
+      </div>
+
+      <div class="filters-bar">
+        <input type="text" id="searchInput" class="search-input" placeholder="🔍 Rechercher un plat...">
+        <div class="filter-chip" data-filter="veg">🌱 Végétarien</div>
+        <div class="filter-chip" data-filter="bio">🌿 Bio</div>
+        <div class="filter-chip" data-filter="fm">👨‍🍳 Fait maison</div>
+        <div class="filter-chip" data-filter="vf">🇫🇷 Viande FR</div>
+      </div>
+    </div>
+
+    <!-- Sélecteur de jour -->
+    <div id="daySelector" class="day-selector"></div>
+
+    <!-- Grille des repas (RI Déjeuner / Dîner) -->
+    <div id="mealsContainer" class="meals-grid"></div>
+
+    <!-- Section API & CLI -->
+    <div id="apiSection" class="cli-box" style="display: none;">
+      <h3>💻 Commandes CLI disponibles</h3>
+      <p style="color: var(--text-muted); margin-bottom: 0.75rem; font-size: 0.85rem;">
+        Scraper et explorer les menus en ligne de commande :
+      </p>
+      <div class="code-block">
+# Voir les repas du jour au Restaurant INSA (RI)
+python3 -m insa_menu.cli today
+
+# Voir toute la semaine
+python3 -m insa_menu.cli week
+
+# Exporter vers Google Calendar ou Apple Agenda
+python3 -m insa_menu.cli export -f ics -o menus.ics
+
+# Voir la fiche détaillée d'un plat (ingrédients, traçabilité)
+python3 -m insa_menu.cli dish 8719
+      </div>
+
+      <h3 style="margin-top: 1.5rem;">🌐 Points de terminaison API REST (Vercel & Local)</h3>
+      <div class="api-links">
+        <a href="/api/today" target="_blank" class="btn">GET /api/today</a>
+        <a href="/api/week" target="_blank" class="btn">GET /api/week</a>
+        <a href="/api/dish/8719" target="_blank" class="btn">GET /api/dish/8719</a>
+        <a href="/api/allergens" target="_blank" class="btn">GET /api/allergens</a>
+        <a href="/menu.ics" target="_blank" class="btn">GET /menu.ics</a>
+        <a href="/health" target="_blank" class="btn">GET /health</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modale fiche technique -->
+  <dialog id="dishDialog">
+    <div class="dialog-header">
+      <div>
+        <h3 id="dialogTitle">Fiche du plat</h3>
+        <p id="dialogSub" style="color: var(--text-muted); font-size: 0.825rem;"></p>
+      </div>
+      <button class="dialog-close" id="dialogClose">&times;</button>
+    </div>
+    <div id="dialogBody">
+      <div class="modal-section">
+        <h4>Marchandises & Ingrédients</h4>
+        <ul id="dialogIngredients" class="modal-list"></ul>
+      </div>
+      <div class="modal-section" id="dialogMeatSection" style="display: none;">
+        <h4>Origine des viandes</h4>
+        <ul id="dialogMeat" class="modal-list"></ul>
+      </div>
+      <div class="modal-section">
+        <h4>Allergènes répertoriés</h4>
+        <div id="dialogAllergens" style="font-size: 0.85rem; color: var(--text-muted);"></div>
+      </div>
+    </div>
+  </dialog>
+
+  <footer>
+    <p>INSA Lyon Menu Scraper • Données officielles LiveSoft / Salamandre • Le Restaurant INSA (RI)</p>
+  </footer>
+
+  <script>
+    let weekData = null;
+    let selectedDate = null;
+    let currentView = 'day';
+    let activeFilters = new Set();
+    let searchQuery = '';
+
+    const themeToggle = document.getElementById('themeToggle');
+    const daySelector = document.getElementById('daySelector');
+    const mealsContainer = document.getElementById('mealsContainer');
+    const apiSection = document.getElementById('apiSection');
+    const searchInput = document.getElementById('searchInput');
+    const dishDialog = document.getElementById('dishDialog');
+    const dialogClose = document.getElementById('dialogClose');
+
+    // Thème (Défaut clair aux couleurs INSA)
+    const savedTheme = localStorage.getItem('insa-theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    themeToggle.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('insa-theme', next);
+    });
+
+    // Filtres
+    document.querySelectorAll('.filter-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        const filter = chip.getAttribute('data-filter');
+        if (activeFilters.has(filter)) {
+          activeFilters.delete(filter);
+          chip.classList.remove('active');
+        } else {
+          activeFilters.add(filter);
+          chip.classList.add('active');
+        }
+        renderView();
+      });
+    });
+
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value.toLowerCase().trim();
+      renderView();
+    });
+
+    // Navigation entre vues
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentView = btn.getAttribute('data-view');
+        renderView();
+      });
+    });
+
+    // Modale
+    dialogClose.addEventListener('click', () => dishDialog.close());
+    dishDialog.addEventListener('click', (e) => {
+      if (e.target === dishDialog) dishDialog.close();
+    });
+
+    // Écouteur global pour ouvrir la modale sans souci d'échappement de chaînes
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.btn-detail');
+      if (btn) {
+        const dishId = btn.getAttribute('data-dish-id');
+        openDishDetail(dishId);
+      }
+    });
+
+    async function openDishDetail(dishId) {
+      if (!dishId) return;
+
+      let dishName = 'Fiche du plat';
+      if (weekData && weekData.days) {
+        for (const day of weekData.days) {
+          for (const meal of (day.meals || [])) {
+            const found = (meal.dishes || []).find(d => String(d.id) === String(dishId));
+            if (found) { dishName = found.name; break; }
+          }
+          if (dishName !== 'Fiche du plat') break;
+        }
+      }
+
+      document.getElementById('dialogTitle').textContent = dishName;
+      document.getElementById('dialogSub').textContent = `Fiche technique ID #${dishId}`;
+      document.getElementById('dialogIngredients').innerHTML = '<li>⏳ Chargement des informations...</li>';
+      document.getElementById('dialogMeatSection').style.display = 'none';
+      document.getElementById('dialogAllergens').textContent = 'Chargement...';
+      dishDialog.showModal();
+
+      try {
+        const res = await fetch(`/api/dish/${dishId}`);
+        const data = await res.json();
+
+        const ingList = document.getElementById('dialogIngredients');
+        ingList.innerHTML = '';
+        if (data.Marchandises && data.Marchandises.length > 0) {
+          data.Marchandises.forEach(m => {
+            const li = document.createElement('li');
+            const qte = m.QteCom ? ` (${m.QteCom} kg)` : '';
+            li.textContent = `${m.LibDen || 'Article'}${qte}`;
+            ingList.appendChild(li);
+          });
+        } else {
+          ingList.innerHTML = '<li>Aucun détail d\'ingrédient renseigné.</li>';
+        }
+
+        const meatSec = document.getElementById('dialogMeatSection');
+        const meatList = document.getElementById('dialogMeat');
+        meatList.innerHTML = '';
+        if (data.OrigineViandes && data.OrigineViandes.length > 0) {
+          meatSec.style.display = 'block';
+          data.OrigineViandes.forEach(v => {
+            const li = document.createElement('li');
+            li.textContent = `${v.LibDen || 'Viande'} : Naissance (${v.NomPayNai || '?'}), Élevage (${v.NomPayElv || '?'}), Abattage (${v.NomPayAba || '?'})`;
+            meatList.appendChild(li);
+          });
+        }
+
+        const algDiv = document.getElementById('dialogAllergens');
+        if (data.Allergenes && data.Allergenes.length > 0) {
+          algDiv.textContent = data.Allergenes.map(a => a.LibAlg).join(', ');
+        } else {
+          algDiv.textContent = 'Aucun allergène majeur déclaré.';
+        }
+      } catch (err) {
+        document.getElementById('dialogIngredients').innerHTML = `<li>Détails non disponibles : ${err.message}</li>`;
+      }
+    }
+
+    async function loadData() {
+      try {
+        mealsContainer.innerHTML = '<div class="empty-state">⏳ Chargement des menus INSA en direct...</div>';
+        const res = await fetch('/api/week');
+        weekData = await res.json();
+
+        const todayStr = new Date().toLocaleDateString('en-CA');
+        const hasToday = (weekData.days || []).some(d => d.date === todayStr);
+        selectedDate = hasToday ? todayStr : (weekData.days && weekData.days[0] ? weekData.days[0].date : null);
+
+        renderDaysSelector();
+        renderView();
+      } catch (err) {
+        mealsContainer.innerHTML = `<div class="empty-state">❌ Erreur lors du chargement : ${err.message}</div>`;
+      }
+    }
+
+    function renderDaysSelector() {
+      if (!weekData || !weekData.days) return;
+      daySelector.innerHTML = '';
+      weekData.days.forEach(day => {
+        const pill = document.createElement('div');
+        pill.className = `day-pill ${day.date === selectedDate ? 'active' : ''}`;
+        pill.innerHTML = `
+          <div class="day-title">${day.day_name}</div>
+          <div class="day-sub">${day.date}</div>
+        `;
+        pill.addEventListener('click', () => {
+          selectedDate = day.date;
+          document.querySelectorAll('.day-pill').forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+          if (currentView !== 'day') {
+            currentView = 'day';
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.getAttribute('data-view') === 'day'));
+          }
+          renderView();
+        });
+        daySelector.appendChild(pill);
+      });
+    }
+
+    function dishPassesFilters(dish) {
+      if (searchQuery && !dish.name.toLowerCase().includes(searchQuery)) return false;
+      if (activeFilters.has('veg') && !dish.is_vegetarian) return false;
+      if (activeFilters.has('bio') && !dish.is_bio) return false;
+      if (activeFilters.has('fm') && !dish.is_homemade) return false;
+      if (activeFilters.has('vf') && !dish.is_french_meat) return false;
+      return true;
+    }
+
+    function renderDishItem(dish) {
+      const badges = [];
+      if (dish.is_vegetarian) badges.push('<span class="badge badge-veg">🌱 VEG</span>');
+      if (dish.is_bio) badges.push('<span class="badge badge-bio">🌿 BIO</span>');
+      if (dish.is_french_meat) badges.push('<span class="badge badge-vf">🇫🇷 VF</span>');
+      if (dish.is_homemade) badges.push('<span class="badge badge-fm">👨‍🍳 Fait maison</span>');
+      if (dish.calories) badges.push(`<span class="badge badge-cal">🔥 ${dish.calories} kcal</span>`);
+      if (dish.net_weight) badges.push(`<span class="badge badge-cal">⚖️ ${dish.net_weight} g</span>`);
+
+      return `
+        <div class="dish-item">
+          <div class="dish-main-info">
+            <div class="dish-name">${dish.name}</div>
+            <div class="dish-meta">${badges.join(' ')}</div>
+          </div>
+          ${dish.id ? `<button class="btn-detail" type="button" data-dish-id="${dish.id}">🔍 Fiche</button>` : ''}
+        </div>
+      `;
+    }
+
+    function getDishesByCategory(meal) {
+      const allDishes = (meal.dishes || []).filter(dishPassesFilters);
+      return [
+        { title: '🥗 Entrées', items: allDishes.filter(d => (d.category || '').toUpperCase() === 'ENTREE') },
+        { title: '🍲 Plats Chauds', items: allDishes.filter(d => (d.category || '').toUpperCase() === 'PLAT') },
+        { title: '🍟 Accompagnements & Sauces', items: allDishes.filter(d => ['GARNITURE', 'SAUCE'].includes((d.category || '').toUpperCase())) },
+        { title: '🧀 Fromages', items: allDishes.filter(d => (d.category || '').toUpperCase() === 'FROMAGE') },
+        { title: '🍰 Desserts', items: allDishes.filter(d => (d.category || '').toUpperCase() === 'DESSERT') },
+        { title: '🍽️ Divers', items: allDishes.filter(d => !['ENTREE', 'PLAT', 'GARNITURE', 'SAUCE', 'FROMAGE', 'DESSERT'].includes((d.category || '').toUpperCase())) },
+      ].filter(c => c.items.length > 0);
+    }
+
+    function renderMealCard(meal) {
+      if (meal.restaurant_name && meal.restaurant_name.includes("Saule")) return '';
+
+      const categories = getDishesByCategory(meal);
+      if (categories.length === 0 && (activeFilters.size > 0 || searchQuery)) return '';
+
+      const sectionsHtml = categories.map(c => `
+        <div class="dish-category">
+          <div class="category-title">${c.title}</div>
+          ${c.items.map(renderDishItem).join('')}
+        </div>
+      `).join('');
+
+      const serviceIcon = (meal.meal_label || '').toLowerCase().includes('dîner') ? '🌙' : '☀️';
+
+      return `
+        <div class="meal-card">
+          <div class="meal-header">
+            <h2>${serviceIcon} ${meal.meal_label}</h2>
+            <span class="meal-badge">${meal.restaurant_name}</span>
+          </div>
+          <div class="meal-content">
+            ${sectionsHtml || '<div class="empty-state">Aucun plat dans ce service.</div>'}
+          </div>
+        </div>
+      `;
+    }
+
+    function renderView() {
+      if (!weekData || !weekData.days) return;
+
+      if (currentView === 'api') {
+        daySelector.style.display = 'none';
+        mealsContainer.style.display = 'none';
+        apiSection.style.display = 'block';
+        return;
+      }
+
+      apiSection.style.display = 'none';
+      mealsContainer.style.display = '';
+
+      if (currentView === 'day') {
+        daySelector.style.display = 'flex';
+        mealsContainer.className = 'meals-grid';
+        const day = weekData.days.find(d => d.date === selectedDate) || weekData.days[0];
+        if (!day || !day.meals || day.meals.length === 0) {
+          mealsContainer.innerHTML = '<div class="empty-state">Aucun repas disponible pour ce jour.</div>';
+          return;
+        }
+
+        const validMeals = day.meals.filter(m => !m.restaurant_name || !m.restaurant_name.includes("Saule"));
+        const cards = validMeals.map(renderMealCard).filter(c => c !== '');
+        mealsContainer.innerHTML = cards.length > 0 ? cards.join('') : '<div class="empty-state">Aucun plat ne correspond à vos filtres.</div>';
+
+      } else if (currentView === 'week') {
+        daySelector.style.display = 'none';
+        mealsContainer.className = 'week-view-container';
+        const dayGroups = [];
+
+        weekData.days.forEach(day => {
+          const validMeals = (day.meals || []).filter(m => !m.restaurant_name || !m.restaurant_name.includes("Saule"));
+          const cards = validMeals.map(renderMealCard).filter(c => c !== '');
+
+          if (cards.length > 0) {
+            dayGroups.push(`
+              <section class="week-day-group">
+                <div class="week-day-header">
+                  <div class="week-day-title">
+                    <span class="week-day-name">📅 ${day.day_name}</span>
+                    <span class="week-day-date">${day.date}</span>
+                  </div>
+                  <span class="week-day-badge">${cards.length} service${cards.length > 1 ? 's' : ''}</span>
+                </div>
+                <div class="week-day-meals">
+                  ${cards.join('')}
+                </div>
+              </section>
+            `);
+          }
+        });
+
+        mealsContainer.innerHTML = dayGroups.length > 0 ? dayGroups.join('') : '<div class="empty-state">Aucun plat pour la semaine ne correspond à vos filtres.</div>';
+      }
+    }
+
+    async function copyToClipboard(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(text);
+          return true;
+        } catch (e) {
+          console.warn('Clipboard API échouée, bascule fallback', e);
+        }
+      }
+      const textArea = document.createElement("textarea");
+      textArea.value = text;
+      textArea.style.position = "fixed";
+      textArea.style.left = "-999999px";
+      textArea.style.top = "-999999px";
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      let success = false;
+      try {
+        success = document.execCommand('copy');
+      } catch (err) {
+        success = false;
+      }
+      document.body.removeChild(textArea);
+      return success;
+    }
+
+    document.getElementById('btnCopyDiscord').addEventListener('click', async () => {
+      if (!weekData || !weekData.days) {
+        alert("Les données ne sont pas encore chargées.");
+        return;
+      }
+      const day = weekData.days.find(d => d.date === selectedDate) || weekData.days[0];
+      if (!day) {
+        alert("Aucun menu trouvé.");
+        return;
+      }
+
+      let text = `🍽️ **Menus Le Restaurant INSA (RI) — ${day.day_name} ${day.date}**\n`;
+      let count = 0;
+      (day.meals || []).forEach(m => {
+        if (m.restaurant_name && m.restaurant_name.includes("Saule")) return;
+        const dishes = m.dishes || [];
+        if (dishes.length > 0) {
+          count++;
+          text += `\n👉 **${m.restaurant_name} (${m.meal_label})**\n`;
+          const plats = dishes.filter(d => (d.category || '').toUpperCase() === 'PLAT').map(d => d.name);
+          if (plats.length > 0) {
+            text += `• Plats : ${plats.join(', ')}\n`;
+          } else {
+            text += `• Plats : ${dishes.slice(0, 3).map(d => d.name).join(', ')}\n`;
+          }
+        }
+      });
+
+      if (count === 0) {
+        alert("Aucun plat pour ce jour.");
+        return;
+      }
+
+      const ok = await copyToClipboard(text);
+      const btn = document.getElementById('btnCopyDiscord');
+      const orig = btn.textContent;
+      if (ok) {
+        btn.textContent = '✅ Copié !';
+        setTimeout(() => { btn.textContent = orig; }, 2000);
+      } else {
+        alert("Texte généré :\n\n" + text);
+      }
+    });
+
+    document.getElementById('btnRefresh').addEventListener('click', loadData);
+
+    loadData();
+  </script>
+</body>
+</html>
+

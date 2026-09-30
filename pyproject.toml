@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "insa-menu"
+version = "1.0.0"
+description = "Scraper et API client pour les menus des restaurants universitaires de l'INSA Lyon"
+readme = "README.md"
+authors = [{ name = "INSA Scraper Team" }]
+license = "MIT"
+requires-python = ">=3.9"
+dependencies = []
+
+[tool.setuptools.packages.find]
+include = ["insa_menu*"]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+]
+api = [
+    "fastapi>=0.100.0",
+    "uvicorn>=0.20.0",
+]
+rich = [
+    "rich>=13.0.0",
+]
+
+[project.scripts]
+insa-menu = "insa_menu.cli:main"

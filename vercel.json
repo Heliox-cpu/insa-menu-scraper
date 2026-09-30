@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/menu.ics",
+      "destination": "/api/index.py?endpoint=menu.ics"
+    },
+    {
+      "source": "/health",
+      "destination": "/api/index.py?endpoint=health"
+    },
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/index.py?endpoint=api/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/public/$1"
+    }
+  ]
+}

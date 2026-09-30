@@ -1,0 +1,6 @@
+# Le cœur du scraper fonctionne à 100% avec la bibliothèque standard Python 3 (zéro dépendance requise).
+# Dépendances optionnelles pour le développement ou fonctionnalités avancées :
+# pytest>=7.0.0
+# rich>=13.0.0
+# fastapi>=0.100.0
+# uvicorn>=0.20.0
