@@ -26,6 +26,20 @@ scraper = InsaMenuScraper(client=client_inst)
 _WEEK_CACHE: dict = {"dict": None, "timestamp": 0}
 
 
+def find_data_file(filename: str) -> str | None:
+    """Recherche un fichier de données dans les répertoires standards."""
+    candidates = [
+        os.path.join(root_dir, "data", filename),
+        os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", filename),
+        os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", filename),
+        os.path.join(os.getcwd(), "data", filename),
+    ]
+    for p in candidates:
+        if os.path.isfile(p):
+            return p
+    return None
+
+
 def get_cached_week_dict(ref_date: str | None = None) -> dict:
     """
     Récupère le dictionnaire des menus de la semaine.
@@ -36,16 +50,26 @@ def get_cached_week_dict(ref_date: str | None = None) -> dict:
     if not ref_date and _WEEK_CACHE["dict"] and (now - _WEEK_CACHE["timestamp"] < 600):
         return _WEEK_CACHE["dict"]
 
+    def _read_snapshot() -> dict | None:
+        p = find_data_file("cached_menu.json")
+        if p and os.path.exists(p):
+            try:
+                with open(p, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                    if any(len(d.get("meals", [])) > 0 for d in data.get("days", [])):
+                        return data
+            except Exception:
+                pass
+        return None
+
     # Sur Vercel (datacenter cloud filtré par le firewall INSA), servir le cache snapshot instantanément
     if os.environ.get("VERCEL"):
-        cached_file = os.path.join(root_dir, "data", "cached_menu.json")
-        if os.path.exists(cached_file):
-            with open(cached_file, "r", encoding="utf-8") as f:
-                data = json.load(f)
-                if not ref_date:
-                    _WEEK_CACHE["dict"] = data
-                    _WEEK_CACHE["timestamp"] = now
-                return data
+        snap = _read_snapshot()
+        if snap:
+            if not ref_date:
+                _WEEK_CACHE["dict"] = snap
+                _WEEK_CACHE["timestamp"] = now
+            return snap
 
     # 1. Tentative live scraper
     try:
@@ -62,14 +86,12 @@ def get_cached_week_dict(ref_date: str | None = None) -> dict:
         pass
 
     # 2. Fallback sur le snapshot local
-    cached_file = os.path.join(root_dir, "data", "cached_menu.json")
-    if os.path.exists(cached_file):
-        with open(cached_file, "r", encoding="utf-8") as f:
-            data = json.load(f)
-            if not ref_date:
-                _WEEK_CACHE["dict"] = data
-                _WEEK_CACHE["timestamp"] = now
-            return data
+    snap = _read_snapshot()
+    if snap:
+        if not ref_date:
+            _WEEK_CACHE["dict"] = snap
+            _WEEK_CACHE["timestamp"] = now
+        return snap
 
     return {"start_date": "", "end_date": "", "days": []}
 
@@ -286,8 +308,8 @@ class handler(http.server.BaseHTTPRequestHandler):
         elif "/dish/" in req_route:
             dish_id = req_route.rstrip("/").split("/")[-1]
             # 1. Vérifier si la fiche détaillée existe dans cached_dishes.json
-            cached_dishes_file = os.path.join(root_dir, "data", "cached_dishes.json")
-            if os.path.exists(cached_dishes_file):
+            cached_dishes_file = find_data_file("cached_dishes.json")
+            if cached_dishes_file and os.path.exists(cached_dishes_file):
                 try:
                     with open(cached_dishes_file, "r", encoding="utf-8") as f:
                         dishes_cache = json.load(f)
