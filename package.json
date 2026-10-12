@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "sync": "python3 scripts/update_cache.py && git add data/ && git diff --cached --quiet || (git commit -m \"chore(sync): update weekly menus from campus\" && git push)"
+  },
   "devDependencies": {
     "vercel": "^61.1.0"
   }

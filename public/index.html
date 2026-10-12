@@ -636,6 +636,16 @@
   </header>
 
   <main>
+    <!-- Bannière d'avertissement en cas de données en cache non actuelles -->
+    <div id="outdatedWarning" class="alert-banner" style="display: none; background: rgba(234, 88, 12, 0.12); border: 1px solid rgba(234, 88, 12, 0.35); border-radius: var(--radius); padding: 0.85rem 1.25rem; margin-bottom: 1.5rem; align-items: center; justify-content: space-between; gap: 1rem; color: #ea580c;">
+      <div>
+        <strong style="display: block; font-size: 0.95rem;">⚠️ Menus en cache local (<span id="outdatedText"></span>)</strong>
+        <span style="color: var(--text-muted); font-size: 0.85rem; display: block; margin-top: 0.2rem;">
+          Le serveur officiel INSA nécessite d'être connecté au réseau du campus (Wi-Fi INSA / Eduroam) ou au VPN (<code>vpn.insa-lyon.fr</code>) pour synchroniser la semaine en cours.
+        </span>
+      </div>
+    </div>
+
     <!-- Contrôles et Filtres -->
     <div class="controls">
       <div class="view-tabs">
@@ -1048,6 +1058,17 @@ python3 -m insa_menu.cli dish 8719
         const todayStr = new Date().toLocaleDateString('en-CA');
         const hasToday = (weekData.days || []).some(d => d.date === todayStr);
         selectedDate = hasToday ? todayStr : (weekData.days && weekData.days[0] ? weekData.days[0].date : null);
+
+        const banner = document.getElementById('outdatedWarning');
+        if (banner) {
+          const isOutdated = !(weekData.days || []).some(d => d.date >= todayStr);
+          if (isOutdated && weekData.start_date) {
+            banner.style.display = 'flex';
+            document.getElementById('outdatedText').textContent = `Semaine du ${weekData.start_date} au ${weekData.end_date}`;
+          } else {
+            banner.style.display = 'none';
+          }
+        }
 
         renderDaysSelector();
         renderView();
